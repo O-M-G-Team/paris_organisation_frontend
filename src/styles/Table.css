@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Paris2024 Semibold';
+}
+
+.title {
+    /* font-family: 'Paris2024 Semibold'; */
+    text-align: center;
+    font-weight: bold;
+    font-size: 2.7rem;
+    letter-spacing: 4px;
+    margin-top: 2rem;
+    line-height: 1.5;
+    /* background: -webkit-linear-gradient(#D6C278, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.sport-table {
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.date {
+    /* font-family: 'Paris2024 Semibold'; */
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    border-radius: 12px 12px 0px 0px;
+    overflow: auto;
+}
+
+th, td {
+    border: 1px solid lightgray;
+    padding: 8px; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    
+    &:first-child {
+      width: 150px;
+    }
+}
+  
+th {
+    background: #D6C278;
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+
+}
+
+td {
+    text-align: center;
+    &:first-child {
+        width: 90px;
+        text-align: left;
+        color: white;
+        font-size: 16px;
+        
+      }
+}
+
+.day {
+    &:first-child {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+      }
+    
+}
+
+tr td:nth-child(even) {
+    background-color: #d6c27852;
+}
+  
+tr td:nth-child(odd) {
+    background-color: #d6c27893;
+
+    &:first-child {
+        background-color: #d6c278;
+    }
+}
+
+.medal:hover {
+    transform: scale(1.04, 1.04);
+    transition: all 0.2s ease-in-out;
+}
