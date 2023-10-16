@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import '../styles/medal.css'
 
 
-const Medal = () => {
-    const routeName = '/'
+const Medal = ({ sportID }) => {
+    const routeName = `/${sportID}`
 
     return (
         <Link to={routeName} className='medal'>
