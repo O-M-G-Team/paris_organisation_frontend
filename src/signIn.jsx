@@ -1,7 +1,7 @@
 import {auth, provider} from './FirebaseConfig';
 import {useState} from 'react';
 import { signInWithPopup } from 'firebase/auth';
-
+import img_sec2 from './img/sec2.png'
 function SignIn() {
 
   const [user, setUser] = useState(null);
@@ -22,6 +22,9 @@ function SignIn() {
 
   return (
     <div className="wrapper">
+      <div className='img_sec2'>
+        <img src={img_sec2} width="650" height="944"></img>
+      </div>
       <div className='box'>
           {user?(
             <>
