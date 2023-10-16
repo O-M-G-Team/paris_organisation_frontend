@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import Medal from '../components/Medal'
 import '../styles/Table.css'
-
+import { getSport } from '../services/data'
 
 const SportTable = () => {
+    const [sport, setSport] = useState([]);
+
+    useEffect(()=>{
+        getSport().then(data=>setSport(data))
+    },[]);
 
     return (
         <>
