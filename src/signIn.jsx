@@ -26,24 +26,12 @@ function SignIn() {
         <img src={img_sec2} width="650" height="944"></img>
       </div>
       <div className='box'>
-          {user?(
-            <>
-              <button className='btn btn-secondary btn-md'
-                onClick={handleLogout}>
-                LOGOUT
-              </button>
-              <h3>Welcome {user.displayName}</h3>
-              <p>{user.email}</p>
-              <div className='photo'>
-                <img src={user.photoURL} alt="dp" referrerPolicy='no-referrer'/>
-              </div>
-            </>
-          ):(
-            <button className='btn btn-danger btn-md'
+            <div className='section1'>
+              <p className='topic_login'>LOGIN</p>
+            <button className='btn-login'
               onClick={handleGoogleSignIn}>
-              Sign In With Google
-            </button>  
-          )} 
+              <p className='parah'>Sign In With Google</p>
+            </button> </div> 
       </div>
     </div>
   );
