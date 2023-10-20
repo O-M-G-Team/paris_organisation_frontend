@@ -1,14 +1,18 @@
 import { useState } from "react";
 import '../styles/medal.css'
+import { LuMedal } from "react-icons/lu";
+import { IoIosArrowDropdown } from "react-icons/io";
+
+
 function Dropdown({selected, setSelected}) {
   const [isActive, setIsActive] = useState(false);
   const options = ['Gold','Sliver','Bronze']
   return(
     <div className= "dropdown">
       <div className="dropdown-btn" onClick={(e) => 
-        setIsActive(!isActive)}>
+        setIsActive(!isActive)} >
         {selected}
-        <span className="fas fa-caret down"></span>
+        <span className="fas fa-caret down"></span> <IoIosArrowDropdown/>
       </div>
       {isActive && (
                 <div className="dropdown-content">
@@ -20,7 +24,7 @@ function Dropdown({selected, setSelected}) {
                     }
                     className="dropdown-item"
                     >
-                      {option}
+                      <LuMedal />  {option}
                     </div>
                   ))}
               </div>
