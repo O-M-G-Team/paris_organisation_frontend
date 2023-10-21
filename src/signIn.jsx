@@ -1,7 +1,6 @@
 import {auth, provider} from './FirebaseConfig';
 import {useState} from 'react';
 import { signInWithPopup } from 'firebase/auth';
-import img_sec2 from './img/sec2.png'
 import Olympic from './img/Olympic.png'
 function SignIn() {
 
