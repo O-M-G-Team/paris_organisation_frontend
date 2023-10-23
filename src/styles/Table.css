@@ -95,3 +95,10 @@ tr td:nth-child(odd) {
     transform: scale(1.04, 1.04);
     transition: all 0.2s ease-in-out;
 }
+.no-table-available-message {
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+
+  
+  }
