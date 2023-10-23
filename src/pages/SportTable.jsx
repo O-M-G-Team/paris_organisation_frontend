@@ -20,6 +20,7 @@ const olympicDate = generateDateRange();
 
 const SportTable = () => {
   const [sportData, setSportData] = useState([]);
+  const [keyword, setKeyword] = useState("");
   console.log(sportData);
 
   useEffect(() => {
@@ -31,6 +32,8 @@ const SportTable = () => {
   return (
     <>
       <h1 className='title'>Olympic Schedule</h1>
+      <input type='text' placeholder='Search Sport...' className='search' 
+        onChange={(e) => {setKeyword(e.target.value)}}/>
       <div className='sport-table'>
         {sportData.length === 0 ? (
           <div className='no-table-available-message'>
@@ -53,7 +56,9 @@ const SportTable = () => {
               </tr>
             </thead>
             <tbody>
-              {sportData.map((sport) => (
+            {sportData?.filter((sport) => 
+                sport?.sport_name?.toLowerCase().includes(keyword.toLowerCase()))
+                .map((sport) => (
                 <tr key={sport.sport_id}>
                   <td>{sport.sport_name}</td>
                   {olympicDate.map((date) => (
