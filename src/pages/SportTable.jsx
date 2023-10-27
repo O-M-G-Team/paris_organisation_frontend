@@ -58,6 +58,7 @@ const SportTable = () => {
             <tbody>
             {sportData?.filter((sport) => 
                 sport?.sport_name?.toLowerCase().includes(keyword.toLowerCase()))
+                .sort((a, b) => a.sport_name.toLowerCase().localeCompare(b.sport_name.toLowerCase()))
                 .map((sport) => (
                 <tr key={sport.sport_id}>
                   <td>{sport.sport_name}</td>
