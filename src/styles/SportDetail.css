@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Paris2024 Semibold';
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    border-radius: 12px 12px 0px 0px;
+    overflow: auto;
+}
+
+th, td {
+    border: 1px solid lightgray;
+    padding: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+th, td {
+    width: 20%;
+}
+
+th {
+    background: #D6C278;
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+td {
+    text-align: center;
+}
+
+td:first-child {
+    text-align: center;
+    font-size: 18px;
+}
