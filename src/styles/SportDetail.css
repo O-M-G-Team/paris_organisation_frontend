@@ -3,7 +3,7 @@
     font-family: 'Paris2024 Semibold';
 }
 
-table {
+.detail table {
     border-collapse: collapse;
     table-layout: fixed;
     background: white;
@@ -11,15 +11,10 @@ table {
 }
 
 
-thead {
-    position: sticky;
-    top: 0;
-    border-radius: 12px 12px 0px 0px;
-    overflow: auto;
-}
 
-th, td {
-    border: 1px solid lightgray;
+
+.detail th, td {
+    border: 1px solid white;
     padding: 8px;
     overflow: hidden;
     white-space: nowrap;
@@ -27,22 +22,35 @@ th, td {
     text-align: center;
 }
 
-th, td {
+.detail th, td {
     width: 20%;
 }
 
-th {
+.detail th {
     background: #D6C278;
     color: white;
     text-transform: uppercase;
     font-weight: normal;
 }
 
-td {
+.detail tr td:nth-child(even) {
+    background-color: #d6c27852;
+    color:black;
+}
+  
+.detail tr td:nth-child(odd) {
+    background-color: #d6c27893;
+    color:black;
+    &:first-child {
+        background-color: #d6c27852;
+    }
+}
+
+.detail td {
     text-align: center;
 }
 
-td:first-child {
+.detail td:first-child {
     text-align: center;
     font-size: 18px;
 }

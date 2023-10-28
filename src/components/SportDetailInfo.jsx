@@ -51,7 +51,7 @@ function SportDetailInfo(props) {
                     <h2>
                         Result<br></br>
                     </h2>
-                    <div style={{marginLeft:'1rem'}}>
+                    <div className="detail" style={{marginLeft:'1rem'}}>
                         <table>
                             
                             <thead>
