@@ -10,13 +10,11 @@ function App() {
   return (
     <div className="App">
 
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<SignIn />} />
-          <Route path='/table' element={<SportTable/>}/>
+          <Route path='/table' element={<SportTable />} />
           <Route path="/sport_detail/:sport_id" element={<SportDetail />} />
         </Routes>
-      </BrowserRouter>
     </div>
   );
 }
