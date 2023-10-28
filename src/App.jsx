@@ -1,20 +1,26 @@
 import {Routes, Route} from 'react-router-dom';
 import SportDetail from './pages/SportDetail';
+import SportTable from './pages/SportTable'
 
 
-export default function App() {
+function App() {
 
   return (
-    <div>
-      <div>
 
-        <Routes>
+    <div className="App">
+      <Routes>
+        <Route path='/table' element={<SportTable/>}/>
+      </Routes>  
+      <Routes>
           <Route path="/sport_detail/:sport_id" element={<SportDetail />} />
-        </Routes>
-      </div>
+      </Routes>
+  
     </div>
-  );
+
+  )
 }
+
+export default App;
 
 
 

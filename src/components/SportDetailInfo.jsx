@@ -23,17 +23,13 @@ function SportDetailInfo(props) {
           display: 'flex',
           flexDirection: 'row',
           height: '100vh',
-        },
-        card: {
-          minWidth: 500
-          
-        },
+        }
       };
 
 
     return (
         <div style={styles.container} >
-            <Card sx={styles.card}>
+            <Card sx={{ width: '40%' }}>
                 <CardContent>
                     <h1>
                         {props.sport_detail.sport_name}

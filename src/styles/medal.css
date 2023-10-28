@@ -1,0 +1,10 @@
+img {
+    width: 70%;
+    height: auto;
+    align-items: center;
+}
+
+img:hover {
+    transform: scale(1.1, 1.1);
+    transition: all 0.2s ease-in-out;
+}
