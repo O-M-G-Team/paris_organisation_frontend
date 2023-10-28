@@ -31,13 +31,15 @@ const SportTable = () => {
 
   return (
     <>
-      <h1 className='title'>Olympic Schedule</h1>
-      <input type='text' placeholder='Search Sport...' className='search' 
-        onChange={(e) => {setKeyword(e.target.value)}}/>
+      <div className='table-header'>
+        <h1 className='title'>Olympic Schedule</h1>
+        <input type='text' placeholder='Search Sport...' className='search' 
+          onChange={(e) => {setKeyword(e.target.value)}}/>
+     </div>
       <div className='sport-table'>
         {sportData.length === 0 ? (
           <div className='no-table-available-message'>
-            No table is available at the moment.
+            <h2>Schedule is unavailable at the moment.</h2>
           </div>
         ) : (
           <table>
