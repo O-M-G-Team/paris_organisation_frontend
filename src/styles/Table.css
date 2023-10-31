@@ -45,7 +45,7 @@ thead {
 }
 
 th, td {
-    border: 1px solid lightgray;
+    border: 1px solid white;
     padding: 8px; 
     overflow: hidden;
     white-space: nowrap;
@@ -93,6 +93,9 @@ tr td:nth-child(odd) {
 
 .no-table-available-message {
     text-align: center;
-    color: black;
-    font-size: 2rem;
+    color: #d6c278;
+    margin-top: 5rem;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    position: relative;
 }
