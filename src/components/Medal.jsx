@@ -5,7 +5,7 @@ import '../styles/medal.css'
 
 
 const Medal = ({ sportID }) => {
-    const routeName = `/${sportID}`
+    const routeName = `/sport_detail/${sportID}`
 
     return (
         <Link to={routeName} className='medal'>
