@@ -2,23 +2,25 @@ import {auth, provider} from './FirebaseConfig';
 import {useState} from 'react';
 import { signInWithPopup } from 'firebase/auth';
 import Olympic from './img/Olympic.png'
+
 function SignIn() {
 
   const [user, setUser] = useState(null);
-
+  // console.log('auth1', auth.currentUser)
   const handleGoogleSignIn=()=>{
     signInWithPopup(auth, provider).then((result)=>{
       const user = result.user;
       console.log(user);
       setUser(user);
     }).catch((err)=>{
-      console.log(err);
+      // console.log(err);
     })
   }
-
+  // console.log('auth2', auth.currentUser)
   const handleLogout=()=>{
     setUser(null);
   }
+  console.log("user", user)
 
   return (
     <div className="sec2">
