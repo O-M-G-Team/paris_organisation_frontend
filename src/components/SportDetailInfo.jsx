@@ -32,13 +32,13 @@ function SportDetailInfo(props) {
             <Card sx={{ width: '40%' }}>
                 <CardContent>
                     <h1>
-                        {props.sport_detail.sport_name}
+                        {props.sport_detail.sport_name ? props.sport_detail.sport_name: "Invalid sport id"}
                     </h1>
                     <h2>
                         Participating Country <br></br>
                     </h2>
                     <p>
-                        &emsp;{props.sport_detail.participating_country ? props.sport_detail.participating_country.join(', ') : ''}
+                        &emsp;{props.sport_detail.participating_country ? props.sport_detail.participating_country.join(', ') : 'No country available'}
                     </p>
                     <br></br>
                     <h2>
