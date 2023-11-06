@@ -1,7 +1,7 @@
 import React from 'react';
-import { auth } from './firebase/FirebaseConfig'; // Adjust the path as needed
+import { auth } from '../firebase/FirebaseConfig'; // Adjust the path as needed
 
-function Home() {
+function LogOutButton() {
   const handleLogout = () => {
     // Sign out the user
     auth.signOut().then(() => {
@@ -21,4 +21,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default LogOutButton;
