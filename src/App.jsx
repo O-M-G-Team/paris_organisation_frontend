@@ -6,12 +6,10 @@ import SignIn from "./pages/signIn";
 import "./styles/signIn.css";
 import SportTable from './pages/SportTable';
 import SportDetail from './pages/SportDetail';
-import Home from './Home';
 
 const MainRouter = () => (
   <Routes>
-    <Route path="/home" element={<Home />} />
-    <Route path="/table" element={<SportTable />} />
+    <Route path="/" element={<SportTable />} />
     <Route path="/sport_detail/:sport_id" element={<SportDetail />} />
   </Routes>
 );
