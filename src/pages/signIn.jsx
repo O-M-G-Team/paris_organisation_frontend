@@ -12,7 +12,7 @@ function SignIn() {
       const user = result.user;
       console.log(user);
       setUser(user);
-      window.location.href = "/home";
+      window.location.href = "/";
     }).catch((err)=>{
       // console.log(err);
     })
