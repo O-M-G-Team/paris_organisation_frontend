@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Medal from '../components/Medal';
-import '../styles/Table.css';
+import '../styles/SportTable.css';
 import { getSport } from '../services/data';
+import NavBar from '../components/NavBar';
 
 const generateDateRange = () => {
   const startDate = new Date('2024-07-24');
@@ -31,6 +32,7 @@ const SportTable = () => {
 
   return (
     <>
+      <NavBar />
       <div className='table-header'>
         <h1 className='title'>Olympic Schedule</h1>
         <input type='text' placeholder='Search Sport...' className='search' 
