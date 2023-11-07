@@ -6,11 +6,12 @@
 .title {
     text-align: center;
     font-weight: bold;
-    font-size: 2.7rem;
+    font-size: 3rem;
     letter-spacing: 4px;
     margin-top: 2rem;
     line-height: 1.5;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.2rem;
+    text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.201);
 }
 
 .search {
@@ -94,7 +95,7 @@ tr td:nth-child(odd) {
 .no-table-available-message {
     text-align: center;
     color: #d6c278;
-    margin-top: 5rem;
+    margin-top: 6rem;
     font-size: 1.5rem;
     letter-spacing: 4px;
     position: relative;
