@@ -2,7 +2,7 @@ import React from "react";
 import {NavLink} from "react-router-dom"
 import LogOutButton from "./LogoutButton";
 import defaultUserImg from '../assets/user.png'
-import logoImg from '../assets/react.svg'
+import logoImg from '/paris2024.png'
 import '../styles/NavBar.css';
 
 
@@ -11,7 +11,8 @@ const NavBar = () => {
     <div className='navbar'>
       <div className="logo">
         <NavLink className="home" to="/">
-          <img src={logoImg}/>
+          <img src={logoImg}/> 
+          <h3>O.M.G.</h3>
         </NavLink>
       </div>
       <div className="container">
