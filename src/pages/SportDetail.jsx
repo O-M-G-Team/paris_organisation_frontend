@@ -2,6 +2,7 @@ import SportDetailInfo from "../components/SportDetailInfo";
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import NavBar from '../components/NavBar';
 
 
 const SportDetail = () => {
@@ -19,6 +20,7 @@ const SportDetail = () => {
 
     return (
         <div>
+            <NavBar />
             <SportDetailInfo sport_detail={sport_detail}/>
         </div>
     )
