@@ -6,7 +6,7 @@ import { IoIosArrowDropdown } from "react-icons/io";
 
 function Dropdown({selected, setSelected}) {
   const [isActive, setIsActive] = useState(false);
-  const options = ['Gold','Sliver','Bronze']
+  const options = ['Gold','Silver','Bronze']
   return(
     <div className= "dropdown">
       <div className="dropdown-btn" onClick={(e) => 
