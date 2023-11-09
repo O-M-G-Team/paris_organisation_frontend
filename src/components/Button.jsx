@@ -1,3 +1,4 @@
+import "../styles/button.css"
 const Button = ({ name, type, onClick }) => {
     return (
         <button className="button" type={type} onClick={onClick}>

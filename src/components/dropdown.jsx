@@ -1,5 +1,4 @@
 import { useState } from "react";
-import '../styles/dropdown.css'
 import { IoIosArrowDropdown } from "react-icons/io";
 
 function  DropdownCountry ({selected, setSelected}) {
