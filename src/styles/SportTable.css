@@ -1,0 +1,102 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Paris2024 Semibold';
+}
+
+.title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    margin-top: 2rem;
+    line-height: 1.5;
+    margin-bottom: 0.2rem;
+    text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.201);
+}
+
+.search {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+    float: right;
+    border: 3px solid #D6C278;
+    border-radius: 20px;
+}
+
+.sport-table {
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    border-radius: 12px 12px 0px 0px;
+    overflow: auto;
+}
+
+th, td {
+    border: 1px solid white;
+    padding: 8px; 
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    &:first-child {
+      width: 15%;
+    }
+}
+  
+th {
+    background: #D6C278;
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+td {
+    text-align: center;
+    &:first-child {
+        text-align: left;
+        color: white;
+        font-size: 18px;
+      }
+}
+
+.day {
+    &:first-child {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: black;
+      }
+}
+
+tr td:nth-child(even) {
+    background-color: #d6c27852;
+}
+  
+tr td:nth-child(odd) {
+    background-color: #d6c27893;
+    &:first-child {
+        background-color: #d6c278;
+    }
+}
+
+.no-table-available-message {
+    text-align: center;
+    color: #d6c278;
+    margin-top: 6rem;
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+    position: relative;
+}
