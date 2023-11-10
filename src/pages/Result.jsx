@@ -49,6 +49,7 @@ const Result = (props) => {
   };
   return (
     <>
+        <div className='resulttable'>
     <div className="header">
       <div className='w'>Enter Result</div></div>
       <div className="dropdown1">
@@ -60,7 +61,7 @@ const Result = (props) => {
       <div className='save-btt'>
       <button onClick={sendDataToBackend}>Save</button>
       </div>
-
+      </div>
     </>
   );
 };
