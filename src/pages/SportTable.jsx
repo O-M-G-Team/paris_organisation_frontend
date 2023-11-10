@@ -35,9 +35,9 @@ const SportTable = () => {
       <NavBar />
       <div className='table-header'>
         <h1 className='title'>Olympic Schedule</h1>
-        <input type='text' placeholder='Search Sport...' className='search' 
-          onChange={(e) => {setKeyword(e.target.value)}}/>
-     </div>
+        <input type='text' placeholder='Search Sport...' className='search'
+          onChange={(e) => { setKeyword(e.target.value) }} />
+      </div>
       <div className='sport-table'>
         {sportData.length === 0 ? (
           <div className='no-table-available-message'>
@@ -60,23 +60,23 @@ const SportTable = () => {
               </tr>
             </thead>
             <tbody>
-            {sportData?.filter((sport) => 
+              {sportData?.filter((sport) =>
                 sport?.sport_name?.toLowerCase().includes(keyword.toLowerCase()))
                 .sort((a, b) => a.sport_name.toLowerCase().localeCompare(b.sport_name.toLowerCase()))
                 .map((sport) => (
-                <tr key={sport.sport_id}>
-                  <td>{sport.sport_name}</td>
-                  {olympicDate.map((date) => (
-                    <td className='medal' key={sport.sport_id}>
-                      {new Date(sport.date_time).toISOString().split('T')[0] === date.toISOString().split('T')[0] ? (
-                        <Medal sportID={sport.sport_id} />
-                      ) : (
-                        ' '
-                      )}
-                    </td>
-                  ))}
-                </tr>
-              ))}
+                  <tr key={sport.sport_id}>
+                    <td>{sport.sport_name}</td>
+                    {olympicDate.map((date) => (
+                      <td className='medal' key={sport.sport_id}>
+                        {new Date(sport.date_time).toISOString().split('T')[0] === date.toISOString().split('T')[0] ? (
+                          <Medal sportID={sport.sport_id} />
+                        ) : (
+                          ' '
+                        )}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
             </tbody>
           </table>
         )}

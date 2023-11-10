@@ -12,7 +12,28 @@ const Result = () => {
     setSportResults((prevResults) => [...prevResults, sportResult]);
   };
 
-  const sendDataToBackend = () => {
+  const sendData = (url, method, requestData) => {
+    console.log(requestData);
+    fetch(url, {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error(`Server responded with status: ${response.status}`);
+        }
+      })
+      .catch((error) => {
+        console.error('Error sending data:', error);
+      });
+  }
+
+  const saveData = () => {
     const requestData = {
       sport_id: 'sport_id1',
       result: {
@@ -27,25 +48,10 @@ const Result = () => {
           .map((result) => result.country),
       },
     };
-    console.log(requestData);
-    fetch('http://localhost:8000/paris_org/olympic/enter_result', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(requestData),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error(`Server responded with status: ${response.status}`);
-        }
-      })
-      .catch((error) => {
-        console.error('Error sending data to the backend:', error);
-      });
-  };
+
+    sendData('http://localhost:8000/paris_org/olympic/enter_result', 'PUT', requestData)
+    .then(() => sendData('https://nongnop.azurewebsites.net/match_table/'+sport_id, 'POST', requestData));
+  }
 
   return (
     <div className='resulttable'>
@@ -58,7 +64,7 @@ const Result = () => {
         <Card updateSportResults={updateSportResults} />
       </div>
       <div className='save-btt'>
-      <button onClick={sendDataToBackend}>Save</button>
+      <button onClick={saveData}>Save</button>
       </div>
 
     </div>
