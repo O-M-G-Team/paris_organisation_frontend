@@ -6,9 +6,6 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
-
-
-
 .detail th, td {
     border: 1px solid white;
     padding: 8px;
@@ -33,7 +30,7 @@
     background-color: #d6c27852;
     color:black;
 }
-  
+
 .detail tr td:nth-child(odd) {
     background-color: #d6c27893;
     color:black;
