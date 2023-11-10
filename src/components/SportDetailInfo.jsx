@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import '../styles/SportDetail.css'
@@ -14,25 +13,24 @@ function SportDetailInfo(props) {
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit'
-      };
+    };
 
     const formattedDate = new Date(date).toLocaleString(undefined, options);
 
     const styles = {
         container: {
-          display: 'flex',
-          flexDirection: 'row',
-          height: '100vh',
+            display: 'flex',
+            flexDirection: 'row',
+            height: '100vh',
         }
-      };
-
+    };
 
     return (
-        <div style={styles.container} >
+        <div>
             <Card sx={{ width: '40%' }}>
                 <CardContent>
                     <h1>
-                        {props.sport_detail.sport_name ? props.sport_detail.sport_name: "Invalid sport id"}
+                        {props.sport_detail.sport_name}
                     </h1>
                     <h2>
                         Participating Country <br></br>
@@ -63,9 +61,9 @@ function SportDetailInfo(props) {
                             <tbody>
                             {result && Object.keys(result).length > 0
                                 ? Object.entries(result).map(([key, value]) => (
-                                    <tr key={key}>
-                                        <td>{key}</td>
+                                    <tr key={value}>
                                         <td>{value}</td>
+                                        <td>{key}</td>
                                     </tr>
                                 ))
                                 : <tr>

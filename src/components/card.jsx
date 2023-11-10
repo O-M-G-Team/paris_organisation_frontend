@@ -1,6 +1,6 @@
 import '../styles/card.css';
-import Medal from '../components/medal';
-import Country from '../components/dropdown';
+import DropdownMedal from './DropdownMedal';
+import Country from './DropdownCountry';
 import React, { useState, useEffect } from 'react';
 
 const Card = ({ updateSportResults }) => {
@@ -15,7 +15,7 @@ const Card = ({ updateSportResults }) => {
 
   return (
     <div className="card">
-      <Medal selected={selectedMedal} setSelected={setSelectedMedal} />
+      <DropdownMedal selected={selectedMedal} setSelected={setSelectedMedal} />
       <Country selected={selectedCountry} setSelected={setSelectedCountry} />
     </div>
   );
