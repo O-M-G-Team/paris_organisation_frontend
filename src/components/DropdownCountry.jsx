@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
 
-function  DropdownCountry ({selected, setSelected}) {
+function  DropdownCountry ({selected, setSelected, countries}) {
   const [isActive, setIsActive] = useState(false);
-  const options = ["Algeria", "Argentina", "Thailand"];
+  const options = countries;
   return(
     <div className= "dropdown">
       <div className="dropdown-btn" onClick={(e) => 

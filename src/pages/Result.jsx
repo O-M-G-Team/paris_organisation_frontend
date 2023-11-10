@@ -5,8 +5,9 @@ import "../styles/header.css";
 import Card from '../components/card';
 import "../styles/button.css";
 
-const Result = () => {
+const Result = (props) => {
   const [sportResults, setSportResults] = useState([]);
+  const detail = props.sport_detail;
 
   const updateSportResults = (sportResult) => {
     setSportResults((prevResults) => [...prevResults, sportResult]);
@@ -46,16 +47,15 @@ const Result = () => {
         console.error('Error sending data to the backend:', error);
       });
   };
-
   return (
     <>
     <div className="header">
       <div className='w'>Enter Result</div></div>
       <div className="dropdown1">
         <h1></h1>
-        <Card updateSportResults={updateSportResults} />
-        <Card updateSportResults={updateSportResults} />
-        <Card updateSportResults={updateSportResults} />
+        <Card updateSportResults={updateSportResults} countries={detail.participating_country} />
+        <Card updateSportResults={updateSportResults} countries={detail.participating_country} />
+        <Card updateSportResults={updateSportResults} countries={detail.participating_country} />
       </div>
       <div className='save-btt'>
       <button onClick={sendDataToBackend}>Save</button>

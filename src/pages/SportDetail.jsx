@@ -21,7 +21,7 @@ const SportDetail = () => {
         <div>
             <NavBar />
             <SportDetailInfo sport_detail={sport_detail}/>
-            <Result/>
+            <Result sport_detail={sport_detail}/>
         </div>
     )
 };
