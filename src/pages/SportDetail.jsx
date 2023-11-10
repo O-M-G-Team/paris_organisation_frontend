@@ -18,11 +18,13 @@ const SportDetail = () => {
     });
 
     return (
-        <div>
-            <NavBar />
+        <>
+        <NavBar />
+        <div className='combine-table' style={{display:"flex"}}>
             <SportDetailInfo sport_detail={sport_detail}/>
             <Result/>
         </div>
+        </>
     )
 };
 

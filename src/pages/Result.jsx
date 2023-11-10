@@ -48,7 +48,7 @@ const Result = () => {
   };
 
   return (
-    <>
+    <div className='resulttable'>
     <div className="header">
       <div className='w'>Enter Result</div></div>
       <div className="dropdown1">
@@ -61,7 +61,7 @@ const Result = () => {
       <button onClick={sendDataToBackend}>Save</button>
       </div>
 
-    </>
+    </div>
   );
 };
 
