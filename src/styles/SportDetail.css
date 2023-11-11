@@ -1,4 +1,8 @@
+.sport_info {
+    margin-top: 3rem;
+    margin-right: 4rem;
 
+}
 .detail table {
     border-collapse: collapse;
     table-layout: fixed;
@@ -46,4 +50,17 @@
 .detail td:first-child {
     text-align: center;
     font-size: 18px;
+}
+
+.combine-table {
+    /* width: 100vw */
+}
+
+  
+.info_part {
+width: 40vw;
+}
+
+.result_part {
+width: 60vw;
 }

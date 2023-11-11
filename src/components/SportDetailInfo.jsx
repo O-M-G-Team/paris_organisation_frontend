@@ -16,8 +16,7 @@ function SportDetailInfo(props) {
     const formattedDate = new Date(date).toLocaleString(undefined, options);
 
     return (
-        <div>
-            <br></br>
+        <div className='sport_info'>
             <h1>
                 {props.sport_detail.sport_name}
             </h1>
