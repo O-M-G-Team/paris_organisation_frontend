@@ -1,6 +1,4 @@
 import React from 'react'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import '../styles/SportDetail.css'
 
 function SportDetailInfo(props) {
@@ -16,14 +14,6 @@ function SportDetailInfo(props) {
     };
 
     const formattedDate = new Date(date).toLocaleString(undefined, options);
-
-    const styles = {
-        container: {
-            display: 'flex',
-            flexDirection: 'row',
-            height: '1000px',
-        }
-    };
 
     return (
         <div>
