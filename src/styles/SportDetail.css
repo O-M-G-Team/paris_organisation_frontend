@@ -4,8 +4,8 @@
 
 }
 .detail table {
-    border-collapse: collapse;
-    table-layout: fixed;
+    /* border-collapse: collapse;
+    table-layout: fixed; */
     background: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
@@ -52,9 +52,6 @@
     font-size: 18px;
 }
 
-.combine-table {
-    /* width: 100vw */
-}
 
   
 .info_part {
@@ -63,4 +60,12 @@ width: 40vw;
 
 .result_part {
 width: 60vw;
+}
+
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
 }
