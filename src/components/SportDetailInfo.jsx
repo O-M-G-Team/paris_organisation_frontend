@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from '@mui/material/Card';
+import Card1 from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import '../styles/SportDetail.css'
 
@@ -27,7 +27,7 @@ function SportDetailInfo(props) {
 
     return (
         <div>
-            <Card sx={{ width: '500px', height:'400px' }}>
+            <Card1 sx={{ width: '500px', height:'400px' }}>
                 <CardContent>
                     <h1>
                         {props.sport_detail.sport_name}
@@ -74,7 +74,7 @@ function SportDetailInfo(props) {
                         </table>
                     </div>
                 </CardContent>
-            </Card>
+            </Card1>
         </div>
 
 
