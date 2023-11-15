@@ -133,7 +133,7 @@ const Result = (props) => {
           ))}
       <div className="delete-btt">
   {sportResults.map((result, index) => (
-    index < 3 && <button key={index} onClick={() => deleteCard(index)}>Delete</button>
+    index > 2 && <button key={index} onClick={() => deleteCard(index)}>Delete</button>
   ))}
 </div>
         </div>
