@@ -7,19 +7,37 @@ import "../styles/button.css";
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import BasicModal from '../components/BasicModal';
 
 const Result = (props) => {
-  const [sportResults, setSportResults] = useState([]);
+  const [sportResults, setSportResults] = useState([
+    { medal: 'Select Medal', country: 'Select Country' },
+    { medal: 'Select Medal', country: 'Select Country' },
+    { medal: 'Select Medal', country: 'Select Country' },
+  ]);
   const detail = props.sport_detail;
   const [open,setOpen] = useState(false)
-  const [text,setText] = useState('')
-  const [selectedMedal, setSelectedMedal] = useState('Select Medal');
-  const [selectedCountry, setSelectedCountry] = useState('Select Country');
 
-  const updateSportResults = (sportResult) => {
-    setSportResults((prevResults) => [...prevResults, sportResult]);
+
+  const updateSportResults = (index, sportResult) => {
+    setSportResults((prevResults) => {
+      const updatedResults = [...prevResults];
+      updatedResults[index] = sportResult;
+      return updatedResults;
+    });
+  };
+  
+  const deleteCard = (index) => {
+    const updatedResults = [...sportResults];
+    updatedResults.splice(index, 1);
+    setSportResults(updatedResults);
+  };
+
+  const addCard = () => {
+    // Add a new card with default values
+    setSportResults((prevResults) => [
+      ...prevResults,
+      { medal: 'Select Medal', country: 'Select Country' },
+    ]);
   };
 
   const hasDuplicateCountries = () => {
@@ -42,29 +60,27 @@ const Result = (props) => {
     // console.log(c)
     console.log(sportResults)
     if (sportResults == 0) {
-      setOpen(true);
-      setText('Data is empty.Plase enter sport result')
+      alert('Data is missing. Plase enter all sport result.')
+      window.location.reload();
     } 
     else if(sportResults.length == 1){
-      setOpen(true);
-      setText('Plase enter all sport result')
+      alert('Plase enter all sport result.');
       sportResults.splice(0, 1);
       setSportResults([...sportResults]);
-
+      window.location.reload();
     }
     else if(sportResults.length == 2){
-      setOpen(true);
-      setText('Plase enter all sport result')
+      alert('Plase enter all sport result.');
       sportResults.splice(0, sportResults.length);
       setSportResults([...sportResults]);
+      window.location.reload();
     }
     else if (hasDuplicateCountries()) {
-      setOpen(true);
-      setText('Duplicate countries found. Please enter unique countries for each result.');
+      alert("Duplicate countries found. Please enter unique countries for each result.");
       sportResults.splice(0, sportResults.length);
       setSportResults([...sportResults]);
-      setSelectedMedal('Select Medal');
-      setSelectedCountry('Select Country');
+      window.location.reload();
+
     }
     else {
     const requestData = {
@@ -100,35 +116,34 @@ const Result = (props) => {
         console.error('Error sending data to the backend:', error);
       });
   }};
-  console.log(sportResults.length)
   return (
     <>
-        <div className='resulttable'>
-    <div className="header">
-      <div className='w'>Enter Result</div></div>
-      <div className="dropdown1">
-        <h1></h1>
-        <Card
-            updateSportResults={updateSportResults}
-            countries={detail.participating_country}
-            cardIndex={0}
-          />
-          <Card
-            updateSportResults={updateSportResults}
-            countries={detail.participating_country}
-            cardIndex={1}
-          />
-          <Card
-            updateSportResults={updateSportResults}
-            countries={detail.participating_country}
-            cardIndex={2}
-          />
+      <div className='resulttable'>
+        <div className="header">
+          <div className='w'>Enter Result</div>
+        </div>
+        <div className="dropdown1">
+          {sportResults.map((result, index) => (
+            <Card
+              key={index}
+              updateSportResults={(newResult) => updateSportResults(index, newResult)}
+              countries={detail.participating_country}
+              onDelete={() => deleteCard(index)}
+            />
+          ))}
+      <div className="delete-btt">
+  {sportResults.map((result, index) => (
+    index < 3 && <button key={index} onClick={() => deleteCard(index)}>Delete</button>
+  ))}
+</div>
+        </div>
+        <div className='add-btt'>
+        <button onClick={addCard}>Add</button>
+        </div>
+        <div className='save-btt'>
+          <button onClick={sendDataToBackend}>Save</button>
+        </div>
       </div>
-      <div className='save-btt'>
-      <button onClick={sendDataToBackend}>Save</button>
-      </div>
-      </div>
-              <BasicModal open={open} onClose={() => setOpen(false)} text={text}/>
     </>
   );
 };
