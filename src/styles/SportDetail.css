@@ -3,6 +3,9 @@
     margin-right: 4rem;
 
 }
+.detail{
+    margin-top: 10px;
+}
 .detail table {
     /* border-collapse: collapse;
     table-layout: fixed; */
@@ -56,10 +59,11 @@
   
 .info_part {
 width: 50vw;
+margin-left: 30px;
 }
 
 .result_part {
-width: 60vw;
+width: 50vw;
 }
 
 .error-message {
