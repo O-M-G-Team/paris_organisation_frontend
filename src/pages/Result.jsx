@@ -118,6 +118,17 @@ const Result = (props) => {
   }};
   return (
     <>
+            <div className='add-btt'>
+        <button onClick={addCard}>Add</button>
+        </div>
+        <div className='save-btt'>
+          <button onClick={sendDataToBackend}>Save</button>
+        </div>
+        <div className="delete-btt">
+  {sportResults.map((result, index) => (
+    index > 2 && <button key={index} onClick={() => deleteCard(index)}>Delete</button>
+  ))}
+</div>
       <div className='resulttable'>
         {/* <div className="header">
           <div className='w'>Enter Result</div>
@@ -132,17 +143,6 @@ const Result = (props) => {
             />
           ))}
         </div>
-        <div className='add-btt'>
-        <button onClick={addCard}>Add</button>
-        </div>
-        <div className='save-btt'>
-          <button onClick={sendDataToBackend}>Save</button>
-        </div>
-        <div className="delete-btt">
-  {sportResults.map((result, index) => (
-    index > 2 && <button key={index} onClick={() => deleteCard(index)}>Delete</button>
-  ))}
-</div>
       </div>
     </>
   );

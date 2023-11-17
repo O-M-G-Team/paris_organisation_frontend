@@ -6,11 +6,13 @@ import SignIn from "./pages/signIn";
 import "./styles/signIn.css";
 import SportTable from './pages/SportTable';
 import SportDetail from './pages/SportDetail';
+import SportDetailError from './pages/SportDetailError';
 
 const MainRouter = () => (
   <Routes>
     <Route path="/" element={<SportTable />} />
     <Route path="/sport_detail/:sport_id" element={<SportDetail />} />
+    <Route path="/sport_detail/error_page/:sport_id" element={<SportDetailError />} />
   </Routes>
 );
 
