@@ -102,7 +102,7 @@ const Result = (props) => {
       window.location.reload();
     } else {
       const requestData = {
-        sport_id: "sport_id1",
+        sport_id: detail.sport_id,
         result: {
           gold: sportResults
             .filter((result) => result.medal === "Gold")
@@ -115,8 +115,6 @@ const Result = (props) => {
             .map((result) => result.country),
         },
       };
-      alert("Result is already saved!");
-      window.location.reload();
       console.log(requestData);
       fetch("http://localhost:8000/paris_org/olympic/enter_result", {
         method: "PUT",
@@ -135,7 +133,9 @@ const Result = (props) => {
         .catch((error) => {
           console.error("Error sending data to the backend:", error);
         });
-    }
+    alert("Result is already saved!");
+    window.location.reload();
+    }  
   };
   return (
     <>
