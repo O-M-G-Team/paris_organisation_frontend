@@ -14,6 +14,7 @@ const SportDetail = () => {
     const [sport_detail, setSportDetail] = useState([{}])
     const navigate = useNavigate();
 
+
     useEffect(() => {
         axios.get(`http://localhost:8000/paris_org/olympic/${sport_id}`)
             .then(res => {setSportDetail(res.data)})
