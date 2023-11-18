@@ -85,7 +85,7 @@ const Result = (props) => {
     }
   }
 
-  const sendDataToIOC = (url, method, requestData) => {
+  const sendData = (url, method, requestData) => {
     return fetch(url, {
       method: method,
       headers: {
@@ -102,7 +102,6 @@ const Result = (props) => {
       })
       .catch((error) => {
         console.error("Error sending data to the backend:", error);
-        // You might choose to handle the error further or rethrow it
         throw error;
       });
   };
@@ -123,6 +122,7 @@ const Result = (props) => {
       setSportResults([...sportResults]);
       window.location.reload();
     } else {
+      const sport_id = { sport_id: detail.sport_id }
       const requestData = {
         result: {
           gold: sportResults
@@ -136,10 +136,17 @@ const Result = (props) => {
             .map((result) => result.country),
         },
       };
+      const dataWithSportID = {
+        ...sport_id,
+        ...requestData,
+      };
+      console.log(combinedData)
       console.log(requestData);
       const url = `https://nongnop.azurewebsites.net/match_table/id/${detail.sport_id}`;
+      const database = `http://localhost:8000/paris_org/olympic/enter_result`;
       const method = "POST";
-      sendDataToIOC(url, method, requestData)
+      const methodDB = 'PUT';
+      sendData(url, method, requestData)
         .then((responseData) => {
           // Handle the response data if needed
           console.log("Response from the backend:", responseData);
@@ -148,6 +155,7 @@ const Result = (props) => {
           // Handle any errors that occurred during the sendDataToBackend function
           console.error("Error in sendDataToBackend:", error);
         });
+      sendData(database, methodDB, dataWithSportID)
       // alert("Result is already saved!");
       // window.location.reload();
     }
@@ -184,7 +192,12 @@ const Result = (props) => {
               updateSportResults={(newResult) =>
                 updateSportResults(index, newResult)
               }
-              countries={detail.participating_country}
+              // countries={detail.participating_country}
+              countries={[
+                "India", 
+                "Japan", 
+                "Spain"
+              ]}
               onDelete={() => deleteCard(index)}
             />
           ))}

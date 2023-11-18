@@ -46,7 +46,7 @@ const SportTable = () => {
         />
       </div>
       <div className="sport-table">
-        {sportData.length === 0 ? (
+        {(!sportData || sportData.length === 0) ? (
           <div className="no-table-available-message">
             <h2>Schedule is unavailable at the moment.</h2>
           </div>
@@ -57,17 +57,11 @@ const SportTable = () => {
                 <th>Sport</th>
                 {olympicDate.map((date) => (
                   <th key={date}>
-                    {date
-                      .toLocaleDateString("en-UK", {
-                        month: "numeric",
-                        day: "numeric",
-                      })
-                      .split("/")
-                      .map((day) => (
-                        <div className="day" key={day}>
-                          {day}
-                        </div>
-                      ))}
+                    {date.toLocaleDateString('th-TH', { month: '2-digit', day: '2-digit' }).split('/').map((day) => (
+                      <div className="day" key={day}>
+                        {day}
+                      </div>
+                    ))}
                   </th>
                 ))}
               </tr>
@@ -89,10 +83,7 @@ const SportTable = () => {
                     <td>{sport.sport_name}</td>
                     {olympicDate.map((date) => (
                       <td className="medal" key={sport.sport_id}>
-                        {new Date(sport.date_time)
-                          .toISOString()
-                          .split("T")[0] ===
-                          date.toISOString().split("T")[0] ? (
+                        {sport.date_time.split('T')[0] === date.toISOString().split('T')[0] ? (
                           <Medal sportID={sport.sport_id} />
                         ) : (
                           " "
