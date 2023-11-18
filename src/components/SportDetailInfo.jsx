@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/SportDetail.css'
 
 function SportDetailInfo(props) {
+    console.log(props)
     const result = props.sport_detail.result;
     const date = props.sport_detail.date_time;
 

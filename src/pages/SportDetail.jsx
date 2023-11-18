@@ -20,6 +20,8 @@ const SportDetail = () => {
             .then(res => {setSportDetail(res.data)})
             .catch(error => {console.log(1);navigate(`/sport_detail/error_page/${sport_id}`);})
     }, [sport_id, navigate]);
+
+    console.log(sport_detail)
     
 
     return (
@@ -28,7 +30,7 @@ const SportDetail = () => {
 
         <div className='combine-table' style={{display:"flex"}}>
             <div className='info_part'> <SportDetailInfo sport_detail={sport_detail}/> </div>
-            <div className='result_part'> <Result/> </div>
+            <div className='result_part'> <Result sport_detail={sport_detail}/> </div>
         </div>
         </>
     )
