@@ -88,6 +88,8 @@ const Result = (props) => {
 
   const sendData = (url, method, requestData) => {
     console.log(requestData);
+    console.log(url)
+    console.log(method)
     fetch(url, {
       method: method,
       headers: {
@@ -105,8 +107,8 @@ const Result = (props) => {
       .catch((error) => {
         console.error('Error sending data:', error);
       });
-    alert("Result is already saved!");
-    window.location.reload();
+    // alert("Result is already saved!");
+    // window.location.reload();
   }
 
   const saveData = () => {
@@ -117,16 +119,18 @@ const Result = (props) => {
       sportResults.splice(0, sportResults.length);
       setSportResults([...sportResults]);
       window.location.reload();
-    } else if (hasDuplicateCountries) {
-      alert(
-        "Duplicate countries found. Please enter unique countries for each result."
-      );
-      sportResults.splice(0, sportResults.length);
-      setSportResults([...sportResults]);
-      window.location.reload();
-    } else {
+    } 
+    // else if (hasDuplicateCountries) {
+    //   alert(
+    //     "Duplicate countries found. Please enter unique countries for each result."
+    //   );
+    //   sportResults.splice(0, sportResults.length);
+    //   setSportResults([...sportResults]);
+    //   window.location.reload();
+    // } 
+    else {
       const requestData = {
-        sport_id: detail.sport_id,
+        // sport_id: detail.sport_id,
         result: {
           gold: sportResults
             .filter((result) => result.medal === "Gold")
@@ -139,9 +143,11 @@ const Result = (props) => {
             .map((result) => result.country),
         },
       };
+      console.log(detail.sport_id)
       console.log(requestData)
-      sendData('http://localhost:8000/paris_org/olympic/enter_result', 'PUT', requestData)
-        .then(() => sendData('https://nongnop.azurewebsites.net/match_table/' + sport_id, 'POST', requestData));
+      console.log('https://nongnop.azurewebsites.net/match_table/id/' + detail.sport_id)
+      sendData(`https://nongnop.azurewebsites.net/match_table/id/${detail.sport_id}`, 'POST', requestData)
+        // .then(() => sendData('https://nongnop.azurewebsites.net/match_table/' + sport_id, 'POST', requestData));
     }
   }
 
@@ -177,7 +183,12 @@ const Result = (props) => {
               updateSportResults={(newResult) =>
                 updateSportResults(index, newResult)
               }
-              countries={detail.participating_country}
+              // countries={detail.participating_country}
+              countries={[
+                "USA", 
+                "Thailand", 
+                "Iceland"
+              ]}
               onDelete={() => deleteCard(index)}
             />
           ))}
