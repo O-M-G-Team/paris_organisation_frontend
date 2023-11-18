@@ -35,7 +35,7 @@ const Result = () => {
 
   const saveData = () => {
     const requestData = {
-      sport_id: 'sport_id1',
+      sport_id: 'ATH0102',
       result: {
         gold: sportResults
           .filter((result) => result.medal === 'Gold')
@@ -48,15 +48,14 @@ const Result = () => {
           .map((result) => result.country),
       },
     };
-
     sendData('http://localhost:8000/paris_org/olympic/enter_result', 'PUT', requestData)
-    .then(() => sendData('https://nongnop.azurewebsites.net/match_table/'+sport_id, 'POST', requestData));
+      .then(() => sendData('https://nongnop.azurewebsites.net/match_table/' + sport_id, 'POST', requestData));
   }
 
   return (
     <div className='resulttable'>
-    <div className="header">
-      <div className='w'>Enter Result</div></div>
+      <div className="header">
+        <div className='w'>Enter Result</div></div>
       <div className="dropdown1">
         <h1></h1>
         <Card updateSportResults={updateSportResults} />
@@ -64,7 +63,7 @@ const Result = () => {
         <Card updateSportResults={updateSportResults} />
       </div>
       <div className='save-btt'>
-      <button onClick={saveData}>Save</button>
+        <button onClick={saveData}>Save</button>
       </div>
 
     </div>
