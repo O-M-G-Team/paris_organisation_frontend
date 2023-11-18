@@ -8,6 +8,7 @@ import SportTable from './pages/SportTable';
 import SportDetail from './pages/SportDetail';
 import SportDetailError from './pages/SportDetailError';
 
+
 const MainRouter = () => (
   <Routes>
     <Route path="/" element={<SportTable />} />
