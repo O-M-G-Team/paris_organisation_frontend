@@ -16,7 +16,7 @@ const Result = (props) => {
   ]);
   const detail = props.sport_detail;
   const [open, setOpen] = useState(false);
-  const unduplicatesport = ["Boxing", "Badminton", "Tennis", "Archery"];
+  const unduplicatesport = ["Boxing", "Badminton", "Tennis", "Archery",'Taekwondo'];
 
   const updateSportResults = (index, sportResult) => {
     setSportResults((prevResults) => {
