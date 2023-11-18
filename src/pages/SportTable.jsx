@@ -46,7 +46,7 @@ const SportTable = () => {
         />
       </div>
       <div className="sport-table">
-        {sportData.length === 0 ? (
+        {(!sportData  || sportData.length === 0)  ? (
           <div className="no-table-available-message">
             <h2>Schedule is unavailable at the moment.</h2>
           </div>
