@@ -126,16 +126,16 @@ const Result = (props) => {
       window.location.reload();
     } else {
       const requestData = {
-        sport_id: 'ATH0102',
+        sport_id: detail.sport_id,
         result: {
           gold: sportResults
-            .filter((result) => result.medal === 'Gold')
+            .filter((result) => result.medal === "Gold")
             .map((result) => result.country),
           silver: sportResults
-            .filter((result) => result.medal === 'Silver')
+            .filter((result) => result.medal === "Silver")
             .map((result) => result.country),
           bronze: sportResults
-            .filter((result) => result.medal === 'Bronze')
+            .filter((result) => result.medal === "Bronze")
             .map((result) => result.country),
         },
       };
