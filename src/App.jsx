@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider, useAuth } from './firebase/AuthContext'; // Import your authentication context
@@ -32,6 +32,24 @@ const MainApp = () => {
 };
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch("http://127.0.0.1:8000/api/data-ioc")
+
+        if (!res.ok) {
+          throw new Error(`Server responded with status: ${res.status}`)
+        }
+        const result = await res.json()
+        console.log(result)
+      } catch (err) {
+        console.error("Error fetching data:", err)
+      }
+    }
+
+    fetchData();
+}, []);
+
   return (
     <div className="app">
       <AuthProvider>
