@@ -36,6 +36,7 @@ table {
     width: 100%;
     background: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-transform: capitalize;
 }
 
 thead {
@@ -53,7 +54,7 @@ th, td {
     text-overflow: ellipsis;
     text-align: center;
     &:first-child {
-      width: 15%;
+      width: 25%;
     }
 }
   
@@ -100,3 +101,26 @@ tr td:nth-child(odd) {
     letter-spacing: 4px;
     position: relative;
 }
+
+.to-top {
+    position: fixed;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    bottom: 1rem;
+    right: 0rem;
+    display: inline-flex;
+    background-color: white;
+    color: #D6C278;
+    text-align: center;
+    border-radius: 100%;
+    border: 0px ;
+}
+
+.to-top:hover {
+    background-color: #374A92;
+    color: #D6C278;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
