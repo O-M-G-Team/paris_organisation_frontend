@@ -18,7 +18,7 @@ export default function Table({ columns, data }) {
       data,
       initialState: {
         sortBy: [
-          { id: 'sport_id', desc: false },
+          { id: 'Sport', desc: false },
         ],
       },
     },
