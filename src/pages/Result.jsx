@@ -89,7 +89,7 @@ const Result = (props) => {
     console.log(sportResults);
     if (hasMedalAndCountry(sportResults)) {
       console.log(sportResults)
-      alert("Please enter all sport result.");
+      alert("Please enter all sport results.");
       sportResults.splice(0, sportResults.length);
       setSportResults([...sportResults]);
       window.location.reload();
@@ -97,6 +97,7 @@ const Result = (props) => {
       alert(
         "Duplicate countries found. Please enter unique countries for each result."
       );
+      console.log('X')
       sportResults.splice(0, sportResults.length);
       setSportResults([...sportResults]);
       window.location.reload();
