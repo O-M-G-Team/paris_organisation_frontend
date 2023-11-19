@@ -37,13 +37,21 @@ const SportTable = () => {
   const columns = useMemo(() => [
     {
       Header: "Sport",
-      accessor: "sport_id",
-      Cell: ({ row }) => (
-        <div>
-          {row.original.sport_type} - {row.original.sport_name}
-        </div>
-      ),
+      accessor: (props) => ([props.sport_type, props.sport_name]),
+      Cell: ({ value }) => {
+        const [sport_type, sport_name] = value;
+        return (
+          <div>
+            {sport_type} - {sport_name}
+          </div>
+        );
+      },
       defaultCanSort: true,
+      sortType: (rowA, rowB) => {
+        const valueA = rowA.original.sport_type + rowA.original.sport_name;
+        const valueB = rowB.original.sport_type + rowB.original.sport_name;
+        return valueA.localeCompare(valueB);
+      },
     },
     ...olympicDate.map((date, index) => ({
       Header: (
@@ -56,6 +64,7 @@ const SportTable = () => {
         </div>
       ),
       accessor: `olympicDates[${index}]`,
+      enableGlobalFilter: false,
       Cell: ({row}) => (
         row.original.date_time.split('T')[0] === date.toISOString().split('T')[0] ? (
           <Medal sportID={row.original.sport_id}/>
