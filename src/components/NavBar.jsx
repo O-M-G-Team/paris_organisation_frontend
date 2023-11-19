@@ -16,6 +16,8 @@ const NavBar = () => {
         </NavLink>
       </div>
       <div className="container">
+        {auth.currentUser ? (
+        <>
         <p className="user-name">{auth.currentUser.displayName}</p>
         <div className="menu-wrap">
           <input type="checkbox" className="toggler" />
@@ -28,7 +30,11 @@ const NavBar = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </>
+        ) : (
+          ''
+        )}
+       </div> 
     </div>
   )
 }
