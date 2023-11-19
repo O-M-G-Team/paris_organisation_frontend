@@ -7,7 +7,6 @@ import '../styles/NavBar.css';
 import { auth } from '../firebase/FirebaseConfig'; // Adjust the path as needed
 
 const NavBar = () => {
-  console.log(auth.currentUser.photoURL)
   return(
     <div className='navbar'>
       <div className="logo">
@@ -21,7 +20,7 @@ const NavBar = () => {
         <div className="menu-wrap">
           <input type="checkbox" className="toggler" />
           <div className="user">
-            <img src={auth.currentUser.photoURL}/>
+            <img className="user-profile" src={auth.currentUser.photoURL}/>
           </div>
           <div className="menu">
             <ul>
