@@ -16,6 +16,12 @@ const Result = (props) => {
   ]);
   const detail = props.sport_detail;
   const [open, setOpen] = useState(false);
+  const unduplicatesport = ["Boxing", "Badminton", "Tennis", "Archery", 'Taekwondo'];
+
+  const url = `https://nongnop.azurewebsites.net/match_table/id/${detail.sport_id}`;
+  const database = `http://localhost:8000/paris_org/olympic/enter_result`;
+  const method = "POST";
+  const methodDB = 'PUT';
 
   const updateSportResults = (index, sportResult) => {
     setSportResults((prevResults) => {
@@ -52,29 +58,23 @@ const Result = (props) => {
     return false; // No duplicates found
   };
 
-  // function hasAllMedals(array) {
-  //   let hasGold = false;
-  //   let hasSilver = false;
-  //   let hasBronze = false;
+  function hasAllMedals(array) {
+    let hasGold = false;
+    let hasSilver = false;
+    let hasBronze = false;
 
-  //   for (let i = 0; i < array.length; i++) {
-  //     if (array[i].medal === 'Gold') {
-  //       hasGold = true;
-  //     } else if (array[i].medal === 'Silver') {
-  //       hasSilver = true;
-  //     } else if (array[i].medal === 'Bronze') {
-  //       hasBronze = true;
-  //     }
-  //   }
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].medal === "Gold") {
+        hasGold = true;
+      } else if (array[i].medal === "Silver") {
+        hasSilver = true;
+      } else if (array[i].medal === "Bronze") {
+        hasBronze = true;
+      }
+    }
 
-  //   return hasGold && hasSilver && hasBronze;
-  // }
-  // else if (!hasAllMedals(sportResults)){
-  //   alert('Result should contain all three medals (Gold, Silver, and Bronze).');
-  //   sportResults.splice(0, sportResults.length);
-  //   setSportResults([...sportResults]);
-  //   window.location.reload();
-  // }
+    return hasGold && hasSilver && hasBronze;
+  }
 
   function hasMedalAndCountry(array) {
     for (let i = 0; i < sportResults.length; i++) {
@@ -83,10 +83,43 @@ const Result = (props) => {
         return true;
       }
     }
+  };
+
+  function isSportTypeInList(sport_type) {
+    return unduplicatesport.includes(sport_type);
   }
 
+  function hasAllMedals(array) {
+    let hasGold = false;
+    let hasSilver = false;
+    let hasBronze = false;
+
+    for (let i = 0; i < array.length; i++) {
+      if (array[i].medal === "Gold") {
+        hasGold = true;
+      } else if (array[i].medal === "Silver") {
+        hasSilver = true;
+      } else if (array[i].medal === "Bronze") {
+        hasBronze = true;
+      }
+    }
+
+    return hasGold && hasSilver && hasBronze;
+  }
+  function hasMedalAndCountry(array) {
+    for (let i = 0; i < sportResults.length; i++) {
+      if (
+        array[i].medal === "Select Medal" &&
+        array[i].country === "Select Country"
+      ) {
+        return true;
+      }
+    }
+  }
+  console.log(sportResults)
+
   const sendData = (url, method, requestData) => {
-    return fetch(url, {
+    fetch(url, {
       method: method,
       headers: {
         "Content-Type": "application/json",
@@ -100,27 +133,54 @@ const Result = (props) => {
           throw new Error(`Server responded with status: ${response.status}`);
         }
       })
+      .then(() => {
+        alert("Result is already saved!");
+        window.location.reload();
+      })
       .catch((error) => {
         console.error("Error sending data to the backend:", error);
-        throw error;
       });
   };
 
   const sendDataToBackend = () => {
-    console.log(sportResults);
     if (hasMedalAndCountry(sportResults)) {
-      console.log(sportResults)
       alert("Please enter all sport result.");
-      sportResults.splice(0, sportResults.length);
-      setSportResults([...sportResults]);
-      window.location.reload();
     } else if (hasDuplicateCountries()) {
       alert(
         "Duplicate countries found. Please enter unique countries for each result."
       );
-      sportResults.splice(0, sportResults.length);
-      setSportResults([...sportResults]);
-      window.location.reload();
+    } else if (isSportTypeInList(detail.sport_type)) {
+      if (!hasAllMedals(sportResults)) {
+        alert(
+          "This sport can't have duplicate medals.The Result should contain all three medals (Gold, Silver, and Bronze)."
+        );
+      }
+      else {
+        const sport_id = { sport_id: detail.sport_id }
+        const requestData = {
+          result: {
+            gold: sportResults
+              .filter((result) => result.medal === "Gold")
+              .map((result) => result.country),
+            silver: sportResults
+              .filter((result) => result.medal === "Silver")
+              .map((result) => result.country),
+            bronze: sportResults
+              .filter((result) => result.medal === "Bronze")
+              .map((result) => result.country),
+          },
+        };
+        const dataWithSportID = {
+          ...sport_id,
+          ...requestData,
+        };
+        console.log(requestData);
+        console.log(dataWithSportID);
+        sendData(database, methodDB, dataWithSportID)
+          .then(() => {
+            sendData(url, method, requestData)
+          });
+      }
     } else {
       const sport_id = { sport_id: detail.sport_id }
       const requestData = {
@@ -140,31 +200,21 @@ const Result = (props) => {
         ...sport_id,
         ...requestData,
       };
-      console.log(combinedData)
+      console.log(dataWithSportID)
       console.log(requestData);
-      const url = `https://nongnop.azurewebsites.net/match_table/id/${detail.sport_id}`;
-      const database = `http://localhost:8000/paris_org/olympic/enter_result`;
-      const method = "POST";
-      const methodDB = 'PUT';
-      sendData(url, method, requestData)
-        .then((responseData) => {
-          // Handle the response data if needed
-          console.log("Response from the backend:", responseData);
-        })
-        .catch((error) => {
-          // Handle any errors that occurred during the sendDataToBackend function
-          console.error("Error in sendDataToBackend:", error);
-        });
       sendData(database, methodDB, dataWithSportID)
-      // alert("Result is already saved!");
-      // window.location.reload();
+        .then(() => {
+          sendData(url, method, requestData)
+        });
     }
   };
   return (
     <>
       <div className="btt-con">
         <div className="add-btt">
-          <button onClick={addCard}>Add</button>
+          {!isSportTypeInList(detail.sport_type) && (
+            <button onClick={addCard}>Add</button>
+          )}
         </div>
         <div className="save-btt">
           <button onClick={sendDataToBackend}>Save</button>
@@ -192,12 +242,7 @@ const Result = (props) => {
               updateSportResults={(newResult) =>
                 updateSportResults(index, newResult)
               }
-              // countries={detail.participating_country}
-              countries={[
-                "India", 
-                "Japan", 
-                "Spain"
-              ]}
+              countries={detail.participating_country}
               onDelete={() => deleteCard(index)}
             />
           ))}
