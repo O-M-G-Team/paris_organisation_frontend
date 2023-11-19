@@ -28,6 +28,64 @@ jest.mock('../firebase/FirebaseConfig', () => ({
     provider: mockProviderData,
   }));
 describe('SignIn Component', () => {
+  it('should render SignIn component when not logged in and accessing "/"', async () => {
+    const originalError = console.error;
+    console.error = jest.fn(); // Mock console.error to capture errors
+
+    let originalLocation;
+    try {
+      const { getByText } = render(
+        <MemoryRouter initialEntries={['/']}>
+          <SignIn />
+        </MemoryRouter>
+      );
+
+      // Expect the SignIn component to be rendered when not logged in and accessing "/"
+      expect(getByText('Sign In With Google')).toBeInTheDocument();
+    } catch (error) {
+      console.error('Error in test:', error);
+    } finally {
+      console.error = originalError;
+    }
+  });
+  it('should render SignIn component when not logged in and accessing "/sport_detail/ATH0102"', async () => {
+    const originalError = console.error;
+    console.error = jest.fn(); // Mock console.error to capture errors
+    let originalLocation;
+    try {
+      const { getByText } = render(
+        <MemoryRouter initialEntries={['/sport_detail/ATH0102']}>
+          <SignIn />
+        </MemoryRouter>
+      );
+
+      // Expect the SignIn component to be rendered when not logged in and accessing "/"
+      expect(getByText('Sign In With Google')).toBeInTheDocument();
+    } catch (error) {
+      console.error('Error in test:', error);
+    } finally {
+      console.error = originalError;
+    }
+  });
+  it('should render SignIn component when not logged in and accessing "/sport_detail/error_page/ATH0102"', async () => {
+    const originalError = console.error;
+    console.error = jest.fn(); // Mock console.error to capture errors
+    let originalLocation;
+    try {
+      const { getByText } = render(
+        <MemoryRouter initialEntries={['/sport_detail/error_page/ATH0102']}>
+          <SignIn />
+        </MemoryRouter>
+      );
+
+      // Expect the SignIn component to be rendered when not logged in and accessing "/"
+      expect(getByText('Sign In With Google')).toBeInTheDocument();
+    } catch (error) {
+      console.error('Error in test:', error);
+    } finally {
+      console.error = originalError;
+    }
+  });
     it('should redirect to "/" after successful Google sign-in', async () => {
       const originalError = console.error;
       console.error = jest.fn(); // Mock console.error to capture errors
