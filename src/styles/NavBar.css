@@ -37,11 +37,22 @@
     margin-right: 1rem;
     margin-top: 5px;
 }
+.user-name {
+    position: relative;
+    right: 70px;
+}
 
+.user-profile {
+    border-radius: 100%;
+}
 .container .menu-wrap {
     position: relative;
     height: 25px;
     width: 15px;
+}
+.menu-wrap {
+    left: 120px;
+    top: -23px;
 }
 
 .container .menu-wrap .user {
@@ -99,6 +110,7 @@
     width: 120px;
     height: 50px;
     transition: 0.5s;
+    z-index: 3;
 }
 
 .container .menu-wrap .toggler:checked ~ .user {

@@ -6,11 +6,12 @@ import '../styles/medal.css'
 
 const Medal = ({ sportID }) => {
     const routeName = `/sport_detail/${sportID}`
+    const altText = `medal-${sportID}`;
 
     return (
         <Link to={routeName} className='medal'>
             <div className='medal-image'>
-                <img src={medalImg}/>
+                <img src={medalImg} alt={altText}/>
             </div>
         </Link>
     )

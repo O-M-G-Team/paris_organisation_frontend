@@ -4,7 +4,7 @@ import LogOutButton from "./LogoutButton";
 import defaultUserImg from '../assets/user.png'
 import logoImg from '/paris2024.png'
 import '../styles/NavBar.css';
-
+import { auth } from '../firebase/FirebaseConfig'; // Adjust the path as needed
 
 const NavBar = () => {
   return(
@@ -16,10 +16,13 @@ const NavBar = () => {
         </NavLink>
       </div>
       <div className="container">
+        {auth.currentUser ? (
+        <>
+        <p className="user-name">{auth.currentUser.displayName}</p>
         <div className="menu-wrap">
           <input type="checkbox" className="toggler" />
           <div className="user">
-            <img src={defaultUserImg}/>
+            <img className="user-profile" src={auth.currentUser.photoURL}/>
           </div>
           <div className="menu">
             <ul>
@@ -27,7 +30,11 @@ const NavBar = () => {
             </ul>
           </div>
         </div>
-      </div>
+      </>
+        ) : (
+          ''
+        )}
+       </div> 
     </div>
   )
 }

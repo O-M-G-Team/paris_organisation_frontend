@@ -26,7 +26,7 @@ function SignIn() {
   return (
     <div className="sec2">
           <div className="img_sec2">
-            <img src={Olympic} width="500" height="230.83" className="img_olympic_logo" alt="Olympic Logo" />
+            <img src={Olympic} width="450" height="200.83" className="img_olympic_logo" alt="Olympic Logo" />
             <h1 className="topics">Paris 2024</h1>
             <h1 className="topics">Olympic Games</h1>
           </div>
