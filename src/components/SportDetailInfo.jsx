@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/SportDetail.css'
-import SportImage from "../components/SportImage";
+// import SportImage from "../components/SportImage";
 
 function SportDetailInfo(props) {
     console.log(props)
