@@ -1,12 +1,13 @@
-import axios from "axios"
+import axios from "axios";
 
+const sportInfoApi = import.meta.env.VITE_API_SPORT_INTO;
 
 export async function getSport() {
-    try {
-    const res = await axios.get("http://127.0.0.1:8000/paris_org/olympic/sport_info")
-    return res.data
-    }
-    catch(err) { 
-        console.log(err)
-    }
+  try {
+    const res = await axios.get(sportInfoApi);
+
+    return res.data;
+  } catch (err) {
+    console.log(err);
+  }
 }
