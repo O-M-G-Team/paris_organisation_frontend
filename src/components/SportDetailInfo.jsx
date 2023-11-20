@@ -19,7 +19,7 @@ function SportDetailInfo(props) {
     return (
         <div className='sport_info'>
             <h1>
-                {props.sport_detail.sport_name}
+                {props.sport_detail.sport_type + " - "+ props.sport_detail.sport_name}
             </h1>
             <br></br>
             <h2>

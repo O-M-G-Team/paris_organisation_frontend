@@ -1,51 +1,61 @@
-.save-btt{
-    width: 789px;
-    height: 70px;
-    text-align: right;
-    position:relative;
-    display: flex;
-}
-.add-btt{
+.save-btt {
   width: 789px;
   height: 70px;
   text-align: right;
-  position:relative;
+  position: relative;
   display: flex;
 }
-.delete-btt{
+
+.add-btt {
   width: 789px;
   height: 70px;
   text-align: right;
-  position:relative;
+  position: relative;
   display: flex;
 }
+
+.delete-btt {
+  width: 789px;
+  height: 70px;
+  text-align: right;
+  position: relative;
+  display: flex;
+}
+
 button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1.2em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: #ffffff;
-    cursor: pointer;
-    transition: border-color 0.25s;
-    position:absolute;
-    bottom:0;
-    border-color: #000000;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.2em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  /* position:absolute; */
+  /* bottom:0; */
+  border-color: #000000;
+}
 
-  }
-  button:hover {
-    border-color: #646cff;
-  }
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
+.button {
+  position: absolute;
+  bottom: 0;
+}
 
-.btt-con{
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btt-con {
   display: flex;
 }
-.dropdown1{
+
+.dropdown1 {
   width: 789px;
   height: 70px;
 }

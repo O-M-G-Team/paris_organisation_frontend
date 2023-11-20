@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
 import '../styles/resultmedal.css'
+import React from 'react';
 
 function  DropdownCountry ({selected, setSelected, countries}) {
   const [isActive, setIsActive] = useState(false);

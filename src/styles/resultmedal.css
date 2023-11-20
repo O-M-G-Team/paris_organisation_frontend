@@ -1,26 +1,30 @@
 /* ===== Google Font Import - Poppins ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
-*{
+* {
     /* margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif; */
 }
-body{
+
+body {
     background: #fdfffa;
 }
+
 .container {
     /* width: 100%;
     height: 100vh; */
 }
-.dropdown{
+
+.dropdown {
     width: 400px;
     height: 55px;
     position: relative;
 }
-.dropdown .dropdown-btn{
-    width: 350px;
+
+.dropdown .dropdown-btn {
+    width: 250px;
     height: 77px;
     flex-shrink: 0;
     display: flex;
@@ -33,14 +37,13 @@ body{
     align-items: center;
     cursor: pointer;
     justify-content: space-between;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-left: 50px;
     margin-top: 20px;
-
 }
 
-.dropdown .dropdown-content{
-    width: 350px;
+.dropdown .dropdown-content {
+    width: 250px;
     height: 140px;
     position: absolute;
     top: 110%;
@@ -55,12 +58,14 @@ body{
     margin-top: 20px;
     overflow-y: scroll;
 }
-.dropdown .dropdown-content .dropdown-item{
+
+.dropdown .dropdown-content .dropdown-item {
     padding: 10px;
-    cursor:  pointer;
+    cursor: pointer;
     transition: all 0.2s;
 
 }
-.dropdown .dropdown-content .dropdown-item:hover{
-    background: #d4d3d3;}
 
+.dropdown .dropdown-content .dropdown-item:hover {
+    background: #d4d3d3;
+}

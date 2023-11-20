@@ -18,7 +18,6 @@
     padding: 10px;
     font-size: 16px;
     margin-bottom: 0.5rem;
-    margin-right: 1rem;
     float: right;
     border: 3px solid #D6C278;
     border-radius: 20px;
@@ -36,6 +35,8 @@ table {
     width: 100%;
     background: white;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    text-transform: capitalize;
+
 }
 
 thead {
@@ -45,18 +46,23 @@ thead {
     overflow: auto;
 }
 
-th, td {
+th,
+td {
     border: 1px solid white;
-    padding: 8px; 
+    padding: 8px;
     overflow: hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     text-overflow: ellipsis;
     text-align: center;
+
     &:first-child {
-      width: 15%;
+        width: 25%;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+
     }
 }
-  
+
 th {
     background: #D6C278;
     color: white;
@@ -64,13 +70,41 @@ th {
     font-weight: normal;
 }
 
+th:hover {
+    color: #D6C278;
+    background: #374A92;
+}
+
+th:hover .day {
+    color: #D6C278;
+}
+
 td {
     text-align: center;
+
     &:first-child {
         text-align: left;
         color: white;
         font-size: 18px;
-      }
+        align-items: center;
+        bottom: 5%;
+    }
+}
+
+td:hover {
+    background-color: #374A92;
+
+    &:first-child {}
+}
+
+tr:hover td {
+    color: #374A92;
+
+}
+
+tr:hover {
+    background-color: #D6C278;
+
 }
 
 .day {
@@ -78,15 +112,16 @@ td {
         font-size: 1.5rem;
         font-weight: bold;
         color: black;
-      }
+    }
 }
 
 tr td:nth-child(even) {
     background-color: #d6c27852;
 }
-  
+
 tr td:nth-child(odd) {
     background-color: #d6c27893;
+
     &:first-child {
         background-color: #d6c278;
     }
@@ -99,4 +134,32 @@ tr td:nth-child(odd) {
     font-size: 1.5rem;
     letter-spacing: 4px;
     position: relative;
+}
+
+.to-top {
+    position: fixed;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    bottom: 1rem;
+    right: 0rem;
+    display: inline-flex;
+    background-color: white;
+    color: #D6C278;
+    text-align: center;
+    border-radius: 100%;
+    border: 0px;
+}
+
+.to-top:hover {
+    background-color: #374A92;
+    color: #D6C278;
+}
+
+.sport-img {
+    width: 15%;
+    height: auto;
+    transform: scale(1, 1);
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
