@@ -116,7 +116,7 @@ const Result = (props) => {
       }
     }
   }
-  console.log(sportResults)
+  // console.log(sportResults)
 
   const sendData = (url, method, requestData) => {
     fetch(url, {
@@ -144,44 +144,17 @@ const Result = (props) => {
 
   const sendDataToBackend = () => {
     if (hasMedalAndCountry(sportResults)) {
-      alert("Please enter all sport result.");
+      alert("Please enter all sport results.");
     } else if (hasDuplicateCountries()) {
       alert(
         "Duplicate countries found. Please enter unique countries for each result."
       );
-    } else if (isSportTypeInList(detail.sport_type)) {
-      if (!hasAllMedals(sportResults)) {
-        alert(
-          "This sport can't have duplicate medals.The Result should contain all three medals (Gold, Silver, and Bronze)."
-        );
-      }
+    } else if (isSportTypeInList(detail.sport_type) && !hasAllMedals(sportResults)) {
+      alert(
+        "This sport can't have duplicate medals.The Result should contain all three medals (Gold, Silver, and Bronze)."
+      );
+    }
       else {
-        const sport_id = { sport_id: detail.sport_id }
-        const requestData = {
-          result: {
-            gold: sportResults
-              .filter((result) => result.medal === "Gold")
-              .map((result) => result.country),
-            silver: sportResults
-              .filter((result) => result.medal === "Silver")
-              .map((result) => result.country),
-            bronze: sportResults
-              .filter((result) => result.medal === "Bronze")
-              .map((result) => result.country),
-          },
-        };
-        const dataWithSportID = {
-          ...sport_id,
-          ...requestData,
-        };
-        console.log(requestData);
-        console.log(dataWithSportID);
-        sendData(database, methodDB, dataWithSportID)
-          .then(() => {
-            sendData(url, method, requestData)
-          });
-      }
-    } else {
       const sport_id = { sport_id: detail.sport_id }
       const requestData = {
         result: {
@@ -232,9 +205,6 @@ const Result = (props) => {
       </div>
 
       <div className="resulttable">
-        {/* <div className="header">
-          <div className='w'>Enter Result</div>
-        </div> */}
         <div className="dropdown1">
           {sportResults.map((result, index) => (
             <Card
