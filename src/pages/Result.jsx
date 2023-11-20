@@ -19,7 +19,7 @@ const Result = (props) => {
   const unduplicatesport = ["Boxing", "Badminton", "Tennis", "Archery", 'Taekwondo'];
 
   const url = `https://nongnop.azurewebsites.net/match_table/id/${detail.sport_id}`;
-  const database = `http://localhost:8000/paris_org/olympic/enter_result`;
+  const database = import.meta.env.VITE_API_RESULT;
   const method = "POST";
   const methodDB = 'PUT';
 
