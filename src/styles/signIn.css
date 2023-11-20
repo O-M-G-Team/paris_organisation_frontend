@@ -5,12 +5,12 @@
 }
 
 .sec2{
-  width: 90rem;
-  height: 50rem;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 25px;
+  padding-bottom: 10px;
 }
 
 .sec1{
