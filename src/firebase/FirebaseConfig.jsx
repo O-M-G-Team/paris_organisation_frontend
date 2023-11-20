@@ -1,17 +1,17 @@
-import { initializeApp } from 'firebase/app';
-import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { initializeApp } from "firebase/app";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBteRm3wHWifD2FzPZCVB7P7l1s00RUFjc",
-  authDomain: "omg-ffbf5.firebaseapp.com",
-  projectId: "omg-ffbf5",
-  storageBucket: "omg-ffbf5.appspot.com",
-  messagingSenderId: "1081488029520",
-  appId: "1:1081488029520:web:6d0180c9c38f073da2de55",
-  measurementId: "G-QWJE8TG9Y1"
+  apiKey: import.meta.env.VITE_API_KEY,
+  authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.ITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID,
 };
 
-console.log(firebaseConfig)
+console.log(firebaseConfig);
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
@@ -21,4 +21,4 @@ const provider = new GoogleAuthProvider();
 
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
-export {auth, provider}
+export { auth, provider };
