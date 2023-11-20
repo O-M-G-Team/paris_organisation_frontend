@@ -18,8 +18,8 @@ const Result = (props) => {
   const [open, setOpen] = useState(false);
   const unduplicatesport = ["Boxing", "Badminton", "Tennis", "Archery", 'Taekwondo'];
 
-  const url = import.meta.env.VIT_API_IOC_POST_RESULT + `${detail.sport_id}`;
-  const database = import.meta.env.VITE_API_RESULTL;
+  const url = `https://nongnop.azurewebsites.net/match_table/id/${detail.sport_id}`;
+  const database = import.meta.env.VITE_API_RESULT;
   const method = "POST";
   const methodDB = 'PUT';
 

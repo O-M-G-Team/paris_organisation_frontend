@@ -32,10 +32,12 @@ const MainApp = () => {
 };
 
 function App() {
+  const dataIocApi = import.meta.env.VITE_API_DATA_IOC
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/data-ioc")
+        const res = await fetch(dataIocApi)
 
         if (!res.ok) {
           throw new Error(`Server responded with status: ${res.status}`)
