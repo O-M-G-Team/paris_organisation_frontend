@@ -1,109 +1,129 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.sec2{
-  overflow-x: hidden;
+.main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.sec1{
-  width: 50vw;
   height: 100vh;
-  padding: 20px;
-  box-shadow: 5px 5px 4px #e4e4e4;
-  display: flex;
+  width: 100vw;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-left: 1px solid #e4e4e4;
-  border-top: 1px solid #e4e4e4;
-  border-top-right-radius: 100px;
-  border-bottom-right-radius: 100px;
-  position: relative;
-}
-
-.photo{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #e4e4e4;
-}
-
-.photo img{
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.img_sec2 {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 50vw;
-  height: 100vh;
-  background-color: #D6C278;
-  border-right: 1px solid #e4e4e4;
-  border-top: 1px solid #e4e4e4;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-h3, p{
-  margin-top: 5px;
-}
-
-.topic_login {
-  color: #000;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  /* font-family: Paris2024-Variable; */
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: 760;
-  line-height: normal;
+  text-align: center;
 }
 
 .topics {
-  color: #000;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  /* font-family: Paris2024-Variable; */
-  font-size: 4rem;
-  font-style: normal;
-  font-weight: 760;
-  line-height: normal;
+  font-size: 150px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.btn-login {
-  width: 22rem;
-  height: 4rem;
-  border-radius: 1.25rem;
-  border: 1px solid #FFF;
-  background: #D6C278;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  bottom: 250px;
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-around;
+  height: 80%;
 }
 
-.parah {
-  width: 23.75rem;
-  height: 0.5rem;
-  color: #000;
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+#video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.topic-wrapper {
+  margin: auto;
 }
 
 .img_olympic_logo {
-  padding: auto;
-  margin-bottom: 50px;
+  margin-top: 30px;
 }
+
+body {
+  font-family: sans-serif;
+  background-color: #81d4fa;
+  font-weight: bold;
+}
+
+.parah:hover {
+  color: #d6c278;
+  transform: scale(1.1); 
+  transition: transform 0.3s, color 0.3s;
+}
+
+.button-85 {
+  padding: 1em 1em;
+  max-width: 200px;
+  margin: auto;
+  display: block;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+

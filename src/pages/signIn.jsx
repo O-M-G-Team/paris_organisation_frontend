@@ -2,6 +2,8 @@ import {auth, provider} from '../firebase/FirebaseConfig';
 import {useState} from 'react';
 import { signInWithPopup } from 'firebase/auth';
 import Olympic from "../img/Olympic.png"
+import backgroundVideo from "../img/paris2024.mp4"
+
 
 function SignIn() {
 
@@ -24,18 +26,20 @@ function SignIn() {
   console.log("user", user)
 
   return (
-    <div className="sec2">
-          <div className="img_sec2">
-            <img src={Olympic} width="450" height="200.83" className="img_olympic_logo" alt="Olympic Logo" />
-            <h1 className="topics">Paris 2024</h1>
-            <h1 className="topics">Olympic Games</h1>
-          </div>
-          <div className="sec1">
-            <p className="topic_login">LOGIN</p>
-            <button className="btn-login" onClick={handleGoogleSignIn}>
-              <p className="parah">Sign In With Google</p>
-            </button>
-          </div>
+    <div className="main-container">
+      <video autoPlay loop muted id='video'>
+        <source src={backgroundVideo} type='video/mp4' />
+      </video>
+      <img src={Olympic} width="200" height="88" className="img_olympic_logo" alt="Olympic Logo" />
+      <div className="content-wrapper">
+        <div className="topic-wrapper">
+          <h1 className="topics">Paris 2024</h1>
+          <h1 className="topics">Olympic Games</h1>
+        </div>
+        <button className="button-85" onClick={handleGoogleSignIn}>
+          <p className="parah">Sign In With Google</p>
+        </button>
+      </div>
     </div>
   );
   
