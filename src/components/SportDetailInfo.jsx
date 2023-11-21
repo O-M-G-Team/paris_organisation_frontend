@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/SportDetail.css'
+// import SportImage from "../components/SportImage";
 
 function SportDetailInfo(props) {
     console.log(props)
@@ -18,9 +19,12 @@ function SportDetailInfo(props) {
 
     return (
         <div className='sport_info'>
+                
             <h1>
-                {props.sport_detail.sport_name}
+                {props.sport_detail.sport_type + " - "+ props.sport_detail.sport_name}
+                
             </h1>
+                {/* <SportImage  type={props.sport_detail.sport_type.toUpperCase()} /> */}
             <br></br>
             <h2>
                 Participating Country <br></br>

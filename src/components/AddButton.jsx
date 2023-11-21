@@ -2,6 +2,7 @@
 // import {IoIosAddCircle} from "react-icons/io";
 import Card from "./card";
 import { useState } from "react";
+import React from 'react';
 
 function AddDynamicInput(){
    const [val,setVal]=useState([]);
