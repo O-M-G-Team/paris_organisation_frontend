@@ -1,165 +1,225 @@
 * {
-    box-sizing: border-box;
-    font-family: 'Paris2024 Semibold';
+  box-sizing: border-box;
+  font-family: "Paris2024 Semibold";
+}
+
+body {
+  background-color: #000000;
+  /* background-image: url(../assets//bg.png); */
+  /* Full height */
+  /* height: 50%; */
+
+  /* Center and scale the image nicely */
+  /* background-position: center; */
+  /* background-repeat: repeat; */
+  /* background-size: cover; */
+  /* background-repeat: repeat-y; */
+  /* background-position: 10px 30px; */
+}
+@property --k {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+svg[height="0"] {
+  position: absolute;
 }
 
 .title {
-    text-align: center;
-    font-weight: bold;
-    font-size: 3rem;
-    letter-spacing: 4px;
-    margin-top: 2rem;
-    line-height: 1.5;
-    margin-bottom: 0.2rem;
-    text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.201);
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  margin-top: 2rem;
+  line-height: 1.5;
+  margin-bottom: 0.2rem;
+  text-shadow: 3px 4px 4px rgba(255, 255, 255, 0.201);
+  color: white;
+
+  --k: 0;
+  place-self: center;
+  background: linear-gradient(
+    90deg,
+    hsl(calc(var(--k) * 1turn), 75%, 65%),
+    hsl(calc(var(--k) * 1turn + 90deg), 65%, 65%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: url(#f);
+  text-align: center;
+  text-transform: uppercase;
+
+  animation: k 4s linear infinite;
+}
+@keyframes k {
+  to {
+    --k: 1;
+  }
 }
 
+
 .search {
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 0.5rem;
-    float: right;
-    border: 3px solid #D6C278;
-    border-radius: 20px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  float: right;
+  border: 3px solid #d6c278;
+  border-radius: 20px;
+  color: #00004e;
+}
+
+.search:hover {
+  border-color: #ffb2db;
 }
 
 .sport-table {
-    align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
+  align-items: center;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 table {
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
-    background: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-    text-transform: capitalize;
-
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  text-transform: capitalize;
+  z-index: 2;
 }
 
 thead {
-    position: sticky;
-    top: 0;
-    border-radius: 12px 12px 0px 0px;
-    overflow: auto;
+  position: sticky;
+  top: 0;
+  border-radius: 12px 12px 0px 0px;
+  overflow: auto;
+  z-index: 2;
 }
 
 th,
 td {
-    border: 1px solid white;
-    padding: 8px;
-    overflow: hidden;
-    /* white-space: nowrap; */
-    text-overflow: ellipsis;
-    text-align: center;
-
-    &:first-child {
-        width: 25%;
-        overflow-wrap: break-word;
-        white-space: pre-wrap;
-
-    }
+  border: 1px solid white;
+  padding: 8px;
+  overflow: hidden;
+  /* white-space: nowrap; */
+  text-overflow: ellipsis;
+  text-align: center;
+  &:first-child {
+    width: 25%;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
 }
 
 th {
-    background: #D6C278;
-    color: white;
-    text-transform: uppercase;
-    font-weight: normal;
+  background: #00004e;
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
 }
 
 th:hover {
-    color: #D6C278;
-    background: #374A92;
+  color: #d6c278;
+  background: #374a92;
 }
 
 th:hover .day {
-    color: #D6C278;
+  color: white;
 }
 
 td {
-    text-align: center;
+  text-align: center;
 
-    &:first-child {
-        text-align: left;
-        color: white;
-        font-size: 18px;
-        align-items: center;
-        bottom: 5%;
-    }
+  &:first-child {
+    text-align: left;
+    color: white;
+    font-size: 18px;
+    align-items: center;
+    bottom: 5%;
+  }
 }
 
 td:hover {
-    background-color: #374A92;
-
-    &:first-child {}
+  background-color: #374a92;
 }
 
 tr:hover td {
-    color: #374A92;
-
+  color: #d6c278;
 }
 
 tr:hover {
-    background-color: #D6C278;
-
+  background-color: #d6c278;
+  /* z-index: 4; */
+  filter: brightness(1.5);
+  /* filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(7161%) hue-rotate(155deg) brightness(86%) contrast(95%); */
 }
 
 .day {
-    &:first-child {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: black;
-    }
+  &:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d6c278;
+  }
 }
 
 tr td:nth-child(even) {
-    background-color: #d6c27852;
+  background-color: #3b7394;
 }
 
 tr td:nth-child(odd) {
-    background-color: #d6c27893;
-
-    &:first-child {
-        background-color: #d6c278;
-    }
+  background-color: #24487a;
+  &:first-child {
+    background-color: #00004e;
+  }
 }
 
 .no-table-available-message {
-    text-align: center;
-    color: #d6c278;
-    margin-top: 6rem;
-    font-size: 1.5rem;
-    letter-spacing: 4px;
-    position: relative;
+  text-align: center;
+  color: #d6c278;
+  margin-top: 6rem;
+  font-size: 1.5rem;
+  letter-spacing: 4px;
+  position: relative;
 }
 
 .to-top {
-    position: fixed;
-    padding: 0.5rem 1rem;
-    font-size: 20px;
-    bottom: 1rem;
-    right: 0rem;
-    display: inline-flex;
-    background-color: white;
-    color: #D6C278;
-    text-align: center;
-    border-radius: 100%;
-    border: 0px;
+  position: fixed;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+  bottom: 1rem;
+  right: 0rem;
+  display: inline-flex;
+  background-color: white;
+  color: #d6c278;
+  text-align: center;
+  border-radius: 100%;
+  border: 0px;
 }
 
 .to-top:hover {
-    background-color: #374A92;
-    color: #D6C278;
+  background-color: #374a92;
+  color: #d6c278;
 }
 
 .sport-img {
-    width: 15%;
-    height: auto;
-    transform: scale(1, 1);
-    align-items: center;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+  width: 15%;
+  height: auto;
+  transform: scale(1, 1);
+  align-items: center;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  margin-right: 0.7rem;
+}
+
+.sport-name {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.sport-name img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(7161%)
+    hue-rotate(155deg) brightness(86%) contrast(95%);
 }

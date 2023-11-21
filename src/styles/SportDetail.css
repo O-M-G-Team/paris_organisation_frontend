@@ -1,69 +1,130 @@
 .sport_info {
-    margin-top: 3rem;
-    margin-right: 4rem;
+  /* margin-top: 3rem; */
+  /* margin-right: 4rem; */
+  border: 1px solid white;
+  background-color: #003f5b;
+  /* color: #00004e; */
+  margin-top: 5%;
+  /* margin-right: 2rem; */
+  padding-top: 3%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 20px;
+  color: #ffb2db;
+  overflow: hidden;
+  width: fit-content;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  /* display: flex;
+  align-items: center; */
+  /* position: relative; */
 
+  align-items: center;
 }
-.detail{
-    margin-top: 10px;
+
+.sport_info h1 {
+  /* color: #ffb2db; */
+  /* float: right; */
+  /* margin-right: 10%; */
+  /* position: relative; */
+  /* margin-left: 10%; */
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  /* position: relative; */
+}
+
+.info-title:hover {
+  color: #d6c278;
+  filter: brightness(0) saturate(100%) invert(80%) sepia(46%) saturate(349%)
+    hue-rotate(4deg) brightness(90%) contrast(89%);
+}
+
+.sport_info img {
+  /* position: relative; */
+  display: block;
+  /* position: absolute; */
+  float: left;
+  /* padding-left: 10%; */
+  /* width: 20%; */
+  /* margin-left: 5%; */
+  filter: brightness(0) saturate(100%) invert(78%) sepia(29%) saturate(645%)
+    hue-rotate(290deg) brightness(99%) contrast(108%);
+}
+
+.sport_info h2 {
+  padding-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.sport_info h2:hover {
+  color: #d6c278;
+}
+.sport_info p {
+  font-size: 18px;
+  color: white;
+  padding-left: 3%;
+}
+
+.detail {
+  margin-top: 10px;
 }
 .detail table {
-    /* border-collapse: collapse;
+  /* border-collapse: collapse;
     table-layout: fixed; */
-    background: white;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  /* margin-top: 5%; */
 }
 
-.detail th, td {
-    border: 1px solid white;
-    padding: 8px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    text-align: center;
+.detail th,
+td {
+  border: 1px solid white;
+  padding: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
 }
 
-.detail th, td {
-    width: 20%;
+.detail th,
+td {
+  width: 20%;
 }
 
 .detail th {
-    background: #D6C278;
-    color: white;
-    text-transform: uppercase;
-    font-weight: normal;
+  background: #d6c278;
+  color: white;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.detail tr:hover {
+  background-color: #fddb8c;
+  filter: brightness(1);
 }
 
 .detail tr td:nth-child(even) {
-    background-color: #d6c27852;
-    color:black;
+  background-color: #d6c27852;
+  color: black;
 }
 
 .detail tr td:nth-child(odd) {
-    background-color: #d6c27893;
-    color:black;
-    &:first-child {
-        background-color: #d6c27852;
-    }
+  background-color: #d6c27893;
+  color: black;
+  &:first-child {
+    background-color: #d6c27852;
+  }
 }
 
 .detail td {
-    text-align: center;
+  text-align: center;
 }
 
 .detail td:first-child {
-    text-align: center;
-    font-size: 18px;
-}
-
-
-  
-.info_part {
-width: 50vw;
-margin-left: 30px;
-}
-
-.result_part {
-width: 50vw;
+  text-align: center;
+  font-size: 18px;
 }
 
 .error-message {
@@ -72,4 +133,5 @@ width: 50vw;
   justify-content: center;
   height: 100vh;
   text-align: center;
+  color: #d6c278;
 }

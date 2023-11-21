@@ -1,71 +1,73 @@
-/* ===== Google Font Import - Poppins ===== */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
-* {
-    /* margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; */
-}
-
-body {
-    background: #fdfffa;
-}
-
-.container {
-    /* width: 100%;
-    height: 100vh; */
-}
-
 .dropdown {
-    width: 400px;
-    height: 55px;
-    position: relative;
+  width: 50%;
+  height: 55px;
+  position: relative;
+  align-items: center;
 }
 
 .dropdown .dropdown-btn {
-    width: 250px;
-    height: 77px;
-    flex-shrink: 0;
-    display: flex;
-    height: 55px;
-    background: #fff;
-    padding: 20px;
-    font-size: 19px;
-    font-weight: 400;
-    border-radius: 8px;
-    align-items: center;
-    cursor: pointer;
-    justify-content: space-between;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    margin-left: 50px;
-    margin-top: 20px;
+  /* width: 250px; */
+  /* height: 77px; */
+  flex-shrink: 0;
+  display: flex;
+  /* height: 55px; */
+  background: #341269;
+  padding: 20px;
+  font-size: 19px;
+  font-weight: 400;
+  border-radius: 8px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 1.5rem;
+  color: #3dde8e;
+}
+
+.dropdown .dropdown-btn:hover {
+  background-color: #ffb3db;
+  color: #1b17b9;
 }
 
 .dropdown .dropdown-content {
-    width: 250px;
-    height: 140px;
-    position: absolute;
-    top: 110%;
-    left: 0;
-    padding: 10px;
-    background: #fff;
-    box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
-    font-weight: 500;
-    color: #333;
-    text-align: left;
-    margin-left: 50px;
-    margin-top: 20px;
-    overflow-y: scroll;
+  width: 80%;
+  height: 140px;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+  color: #333;
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 20px;
+  overflow-y: scroll;
+  z-index: 2;
 }
 
 .dropdown .dropdown-content .dropdown-item {
-    padding: 10px;
-    cursor: pointer;
-    transition: all 0.2s;
-
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .dropdown .dropdown-content .dropdown-item:hover {
-    background: #d4d3d3;
+  background: #d4d3d3;
+}
+
+.result {
+  /* background-color: #341269; */
+  border: 0px solid white;
+  border-radius: 20px;
+  width: 125%;
+  height: 100%;
+  margin-top: 10%;
+  padding-top: 6%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 5%;
 }
