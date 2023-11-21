@@ -118,7 +118,7 @@ const Result = (props) => {
   }
   // console.log(sportResults)
 
-  const sendData = (url, method, requestData) => {
+  const sendData = (url, method, requestData, destination) => {
     fetch(url, {
       method: method,
       headers: {
@@ -138,7 +138,7 @@ const Result = (props) => {
         window.location.reload();
       })
       .catch((error) => {
-        console.error("Error sending data to the backend:", error);
+        console.error(`Error sending data to the ${destination}:`, error);
       });
   };
 
@@ -175,10 +175,8 @@ const Result = (props) => {
       };
       console.log(dataWithSportID)
       console.log(requestData);
-      sendData(database, methodDB, dataWithSportID)
-        .then(() => {
-          sendData(url, method, requestData)
-        });
+      sendData(database, methodDB, dataWithSportID, "backend")
+      sendData(url, method, requestData, "IOC")
     }
   };
   return (
