@@ -12,9 +12,14 @@ function SignIn() {
   const handleGoogleSignIn=()=>{
     signInWithPopup(auth, provider).then((result)=>{
       const user = result.user;
-      console.log(user);
       setUser(user);
-      window.location.href = "/";
+      if (user.uid === 'fbLlCtZj0FR3dkNdkSIhjg5GPFX2') {
+        window.location.href = "/";
+      }
+      else {
+        setUser(null);
+        return <SignIn />;
+      }
     }).catch((err)=>{
       // console.log(err);
     })

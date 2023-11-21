@@ -20,7 +20,7 @@ const MainRouter = () => (
 const MainApp = () => {
   const { currentUser } = useAuth();
 
-  if (currentUser === null) {
+  if (currentUser === null || currentUser.uid !== 'fbLlCtZj0FR3dkNdkSIhjg5GPFX2') {
     console.log("Execute null");
     return <SignIn />;
   } else {
