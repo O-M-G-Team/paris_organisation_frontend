@@ -2,7 +2,7 @@
     width: 80%;
     height: auto;
     align-items: center;
-}
+    filter: brightness(0) saturate(100%) invert(82%) sepia(44%) saturate(359%) hue-rotate(2deg) brightness(88%) contrast(91%);}
 
 .medal img:hover {
     transform: scale(1.1, 1.1);

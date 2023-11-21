@@ -26,6 +26,7 @@
     position: absolute;
     display: inline;
     margin-left: 5px;
+    padding-top: 15%;
 }
 
 .logo:hover {
@@ -43,6 +44,10 @@
 .user-name {
     position: relative;
     right: 3rem;
+}
+
+.user-name:hover {
+    color: white;
 }
 
 .user-profile {
@@ -99,7 +104,7 @@
     top: calc(-12px + 50px);
     width: 0;
     height: 0;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255);
     padding: 20px 15px;
     box-shadow: 2px 4px 6px rgba(49, 49, 49, 0.2);
     display: flex;

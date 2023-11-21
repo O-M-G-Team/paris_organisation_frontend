@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import "../styles/result.css";
 import Table from "../components/Table";
 import { debounce } from 'lodash';
+import SportImage from "../components/SportImage";
 
 
 const generateDateRange = () => {
@@ -41,7 +42,8 @@ const SportTable = () => {
       Cell: ({ value }) => {
         const [sport_type, sport_name] = value;
         return (
-          <div>
+          <div className="sport-name">
+              <SportImage  type={sport_type.toUpperCase()} /> <span  />
             {sport_type} - {sport_name}
           </div>
         );

@@ -7,6 +7,8 @@ import "../styles/button.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { createSwal } from "../services/createSwat";
+import Swal from "sweetalert2";
 
 const Result = (props) => {
   const [sportResults, setSportResults] = useState([
@@ -135,8 +137,19 @@ const Result = (props) => {
         }
       })
       .then(() => {
-        alert("Result is already saved!");
-        window.location.reload();
+        // alert("Result is already saved!");
+        // window.location.reload();
+        Swal.fire({
+          "icon": 'success',
+          "title": "Result is already saved!",
+          "color": "#2e9900",
+          "showConfirmButton": false,
+          "timer": 1900
+        }).then((result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            window.location.reload();
+          }
+        });
       })
       .catch((error) => {
         console.error(`Error sending data to the ${destination}:`, error);
@@ -145,15 +158,21 @@ const Result = (props) => {
 
   const sendDataToBackend = () => {
     if (hasMedalAndCountry(sportResults)) {
-      alert("Please enter all sport results.");
+      // alert("Please enter all sport results.");
+      createSwal("warning", "Please enter all sport results.", "#ffc038")
     } else if (hasDuplicateCountries()) {
-      alert(
-        "Duplicate countries found. Please enter unique countries for each result."
-      );
+      // alert(
+      //   "Duplicate countries found. Please enter unique countries for each result."
+      // );
+      createSwal("warning", "Duplicate countries found.\nPlease enter unique countries for each result.", "#ffc038")
     } else if (isSportTypeInList(detail.sport_type) && !hasAllMedals(sportResults)) {
-      alert(
-        "This sport can't have duplicate medals.The Result should contain all three medals (Gold, Silver, and Bronze)."
-      );
+      // alert(
+      //   "This sport can't have duplicate medals.The Result should contain all three medals (Gold, Silver, and Bronze)."
+      // );
+      createSwal(
+        "warning", 
+        "This sport can't have duplicate medals.\nThe Result should contain all three medals (Gold, Silver, and Bronze).",
+        "#ffc038")
     }
       else {
       const sport_id = { sport_id: detail.sport_id }
@@ -182,14 +201,16 @@ const Result = (props) => {
   };
   return (
     <>
+     <div className="result">
+     {props.sport_detail && props.sport_detail.sport_type && (
       <div className="btt-con">
+        <div className="save-btt">
+          <button onClick={sendDataToBackend}>Save</button>
+        </div>
         <div className="add-btt">
           {!isSportTypeInList(detail.sport_type) && (
             <button onClick={addCard}>Add</button>
           )}
-        </div>
-        <div className="save-btt">
-          <button onClick={sendDataToBackend}>Save</button>
         </div>
         <div className="delete-btt">
           {sportResults.map(
@@ -202,6 +223,7 @@ const Result = (props) => {
           )}
         </div>
       </div>
+     )}
 
       <div className="resulttable">
         <div className="dropdown1">
@@ -216,6 +238,7 @@ const Result = (props) => {
             />
           ))}
         </div>
+      </div>
       </div>
     </>
   );

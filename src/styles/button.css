@@ -1,25 +1,25 @@
 .save-btt {
-  width: 789px;
+  /* width: 10%;
   height: 70px;
   text-align: right;
   position: relative;
-  display: flex;
+  display: flex; */
 }
 
 .add-btt {
-  width: 789px;
+  /* width: 789px;
   height: 70px;
   text-align: right;
   position: relative;
-  display: flex;
+  display: flex; */
 }
 
 .delete-btt {
-  width: 789px;
+  /* width: 789px;
   height: 70px;
   text-align: right;
   position: relative;
-  display: flex;
+  display: flex; */
 }
 
 button {
@@ -29,12 +29,13 @@ button {
   font-size: 1.2em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #ffffff;
+  background-color: #ff5758;
   cursor: pointer;
   transition: border-color 0.25s;
   /* position:absolute; */
   /* bottom:0; */
   border-color: #000000;
+  color: #331269;
 }
 
 .button {
@@ -46,16 +47,29 @@ button:hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+.button:focus,
+.button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
 .btt-con {
-  display: flex;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* gap: 5rem; */
+  /* align-items: center; */
+  /* padding: 2rem; */
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    /* padding: 2rem; */
+    margin-top: 2rem;
+    width: 70%;
+    /* margin: 0 auto; */
 }
 
 .dropdown1 {
-  width: 789px;
-  height: 70px;
+  /* width: 789px;
+  height: 70px; */
+  /* align-items: center; */
 }

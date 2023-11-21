@@ -31,7 +31,7 @@ const SportDetail = () => {
     <>
       <NavBar />
 
-      <div className="combine-table" style={{ display: "flex" }}>
+      <div className="combine-table">
         <div className="info_part">
           {" "}
           <SportDetailInfo sport_detail={sport_detail} />{" "}
