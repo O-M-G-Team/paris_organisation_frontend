@@ -45,6 +45,7 @@ button {
 
 button:hover {
   border-color: #646cff;
+  color: white;
 }
 
 .button:focus,
@@ -59,13 +60,13 @@ button:hover {
   /* align-items: center; */
   /* padding: 2rem; */
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    /* padding: 2rem; */
-    margin-top: 2rem;
-    width: 70%;
-    /* margin: 0 auto; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  /* padding: 2rem; */
+  margin-top: 2rem;
+  width: 70%;
+  /* margin: 0 auto; */
 }
 
 .dropdown1 {

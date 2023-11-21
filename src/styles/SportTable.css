@@ -16,18 +16,49 @@ body {
   /* background-repeat: repeat-y; */
   /* background-position: 10px 30px; */
 }
+@property --k {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: false;
+}
+
+svg[height="0"] {
+  position: absolute;
+}
 
 .title {
   text-align: center;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 4rem;
   letter-spacing: 4px;
   margin-top: 2rem;
   line-height: 1.5;
   margin-bottom: 0.2rem;
-  text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.201);
+  text-shadow: 3px 4px 4px rgba(255, 255, 255, 0.201);
   color: white;
+
+  --k: 0;
+  place-self: center;
+  background: linear-gradient(
+    90deg,
+    hsl(calc(var(--k) * 1turn), 75%, 65%),
+    hsl(calc(var(--k) * 1turn + 90deg), 65%, 65%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: url(#f);
+  text-align: center;
+  text-transform: uppercase;
+
+  animation: k 4s linear infinite;
 }
+@keyframes k {
+  to {
+    --k: 1;
+  }
+}
+
 
 .search {
   padding: 10px;
@@ -36,6 +67,11 @@ body {
   float: right;
   border: 3px solid #d6c278;
   border-radius: 20px;
+  color: #00004e;
+}
+
+.search:hover {
+  border-color: #ffb2db;
 }
 
 .sport-table {
@@ -116,7 +152,7 @@ tr:hover td {
 tr:hover {
   background-color: #d6c278;
   /* z-index: 4; */
-  /* filter: brightness(1.2); */
+  filter: brightness(1.5);
   /* filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(7161%) hue-rotate(155deg) brightness(86%) contrast(95%); */
 }
 

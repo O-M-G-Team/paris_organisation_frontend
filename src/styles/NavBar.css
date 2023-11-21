@@ -1,161 +1,161 @@
 .navbar {
-    width: 100%;
-    background-color: #d6c278;
-    height: 50px;
-
+  width: 100%;
+  background-color: #d6c278;
+  height: 50px;
 }
 
 .logo {
-    float: left;
-    margin-left: 1rem;
-    margin: 8px 15px;
-    filter: brightness(0);
-
+  float: left;
+  margin-left: 1rem;
+  margin: 8px 15px;
+  filter: brightness(0);
 }
 
 .logo a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .logo img {
-    width: 35px;
-    height: auto;
+  width: 35px;
+  height: auto;
 }
 
 .logo h3 {
-    position: absolute;
-    display: inline;
-    margin-left: 5px;
-    padding-top: 15%;
+  position: absolute;
+  display: inline;
+  margin-left: 5px;
+  padding-top: 15%;
+  letter-spacing: 1px;
 }
 
 .logo:hover {
-    transition: 0.1s;
-    filter: brightness(0) invert(1);
+  transition: 0.1s;
+  filter: brightness(0) invert(1);
 }
 
 .container {
-    padding: 8px 15px;
-    float: right;
-    margin-right: 1rem;
-    margin-top: 5px;
+  padding: 8px 15px;
+  float: right;
+  margin-right: 1rem;
+  margin-top: 5px;
 }
 
 .user-name {
-    position: relative;
-    right: 3rem;
+  position: relative;
+  right: 3rem;
 }
 
 .user-name:hover {
-    color: white;
+  color: white;
 }
 
 .user-profile {
-    border-radius: 100%;
+  border-radius: 100%;
 }
 
 .container .menu-wrap {
-    position: relative;
-    height: 25px;
-    width: 15px;
+  position: relative;
+  height: 25px;
+  width: 15px;
+  padding-top: 1%;
 }
 
 .menu-wrap {
-    left: 120px;
-    top: -23px;
+  left: 120px;
+  top: -23px;
 }
 
 .menu-wrap:hover img {
-    border: solid 3px #374A92;
+  border: solid 3px #374a92;
 }
 
 .container .menu-wrap .user {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .container .menu-wrap .user img {
-    background: transparent;
-    width: 35px;
-    height: auto;
-    align-items: center;
+  background: transparent;
+  width: 35px;
+  height: auto;
+  align-items: center;
 }
 
 .container .menu-wrap .toggler {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    appearance: none;
-    cursor: pointer;
-    z-index: 2;
-    transform: scale(2);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  appearance: none;
+  cursor: pointer;
+  z-index: 2;
+  transform: scale(2);
 }
 
 .container .menu-wrap .menu {
-    position: absolute;
-    right: -10px;
-    top: calc(-12px + 50px);
-    width: 0;
-    height: 0;
-    background-color: rgba(255, 255, 255);
-    padding: 20px 15px;
-    box-shadow: 2px 4px 6px rgba(49, 49, 49, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
+  position: absolute;
+  right: -10px;
+  top: calc(-12px + 50px);
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255);
+  padding: 20px 15px;
+  box-shadow: 2px 4px 6px rgba(49, 49, 49, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .container .menu-wrap .menu ul {
-    list-style: none;
+  list-style: none;
 }
 
-.container .menu-wrap .toggler:checked~.menu {
-    opacity: 1;
-    visibility: visible;
-    width: 120px;
-    height: 50px;
-    transition: 0.5s;
-    z-index: 3;
+.container .menu-wrap .toggler:checked ~ .menu {
+  opacity: 1;
+  visibility: visible;
+  width: 120px;
+  height: 50px;
+  transition: 0.5s;
+  z-index: 3;
 }
 
-.container .menu-wrap .toggler:checked~.user {
-    transition: 0.5s;
+.container .menu-wrap .toggler:checked ~ .user {
+  transition: 0.5s;
 }
 
-.container .menu-wrap .toggler:not(:checked)~.menu {
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
+.container .menu-wrap .toggler:not(:checked) ~ .menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
 }
 
-.toggler:focus~.menu {
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
+.toggler:focus ~ .menu {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
 }
 
-.container .menu-wrap .toggler:not(:checked)~.user {
-    transition: 0.5s;
+.container .menu-wrap .toggler:not(:checked) ~ .user {
+  transition: 0.5s;
 }
 
 .navbar button {
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
 }
 
 .navbar button:hover {
-    transition: all 0.2s ease-in-out;
-    color: #d6c278;
+  transition: all 0.2s ease-in-out;
+  color: #d6c278;
 }

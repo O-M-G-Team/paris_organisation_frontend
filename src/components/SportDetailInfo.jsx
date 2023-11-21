@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/SportDetail.css";
 import SportImage from "../components/SportImage";
+import Loading from "./Loading";
 
 function SportDetailInfo(props) {
   console.log(props);
@@ -21,14 +22,15 @@ function SportDetailInfo(props) {
     <div className="sport_info">
       {props.sport_detail && props.sport_detail.sport_type && (
         <>
-        <SportImage type={props.sport_detail.sport_type.toUpperCase()} />
+          <div className="info-title">
+            <SportImage type={props.sport_detail.sport_type.toUpperCase()} />
+            <h1>
+              {props.sport_detail.sport_type +
+                " - " +
+                props.sport_detail.sport_name}
+            </h1>
+          </div>
 
-          <h1>
-            {props.sport_detail.sport_type +
-              " - " +
-              props.sport_detail.sport_name}
-          </h1>
-          
           <br />
           <h2>
             Participating Country <br></br>
@@ -45,39 +47,37 @@ function SportDetailInfo(props) {
           </h2>
           <p>{formattedDate}</p>
           <br></br>
-       
-      <h2>
-        Result<br></br>
-      </h2>
-      <div className="detail" style={{ marginLeft: "1rem" }}>
-        <table>
-          <thead>
-            <tr>
-              <th>Medal</th>
-              <th>Country</th>
-            </tr>
-          </thead>
-          <tbody>
-            {result && Object.keys(result).length > 0 ? (
-              Object.entries(result).map(([key, value]) => (
-                <tr key={value}>
-                  <td>{key}</td>
-                  <td>{value.join(", ")}</td>
+
+          <h2>
+            Result<br></br>
+          </h2>
+          <div className="detail" style={{ marginLeft: "1rem" }}>
+            <table>
+              <thead>
+                <tr>
+                  <th>Medal</th>
+                  <th>Country</th>
                 </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan="2"> &emsp; No result available</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-       </>
+              </thead>
+              <tbody>
+                {result && Object.keys(result).length > 0 ? (
+                  Object.entries(result).map(([key, value]) => (
+                    <tr key={value}>
+                      <td>{key}</td>
+                      <td>{value.join(", ")}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="2"> &emsp; No result available</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </>
       )}
-      {!props.sport_detail || !props.sport_detail.sport_type && (
-      <p>Loading...</p>
-    )}
+      {!props.sport_detail || (!props.sport_detail.sport_type && <Loading />)}
     </div>
   );
 }
