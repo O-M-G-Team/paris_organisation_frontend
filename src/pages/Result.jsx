@@ -16,7 +16,8 @@ const Result = (props) => {
   ]);
   const detail = props.sport_detail;
   const [open, setOpen] = useState(false);
-  const unduplicatesport = ["Boxing", "Badminton", "Tennis", "Archery",'Taekwondo'];
+  const unduplicatesport = ["boxing", "badminton", "tennis", "archery",'taekwondo'];
+  
 
   const updateSportResults = (index, sportResult) => {
     setSportResults((prevResults) => {
@@ -54,7 +55,8 @@ const Result = (props) => {
   };
 
   function isSportTypeInList(sport_type) {
-    return unduplicatesport.includes(sport_type);
+    // Check if sport_type is defined before calling toLowerCase
+    return sport_type && unduplicatesport.includes(sport_type.toLowerCase());
   }
 
   function hasAllMedals(array) {
