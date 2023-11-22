@@ -42,7 +42,8 @@
 
 .user-name {
   position: relative;
-  right: 3rem;
+  /* right: 3rem; */
+  right: 40%;
 }
 
 .user-name:hover {
