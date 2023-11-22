@@ -1,26 +1,28 @@
 .save-btt {
-  /* width: 10%;
+  width: 789px;
   height: 70px;
   text-align: right;
   position: relative;
-  display: flex; */
+  display: flex;
 }
 
 .add-btt {
-  /* width: 789px;
+  width: 798px;
   height: 70px;
   text-align: right;
   position: relative;
-  display: flex; */
+  display: flex;
+  padding-left: 3%;
 }
 
 .delete-btt {
-  /* width: 789px;
+  width: 789px;
   height: 70px;
   text-align: right;
   position: relative;
-  display: flex; */
+  display: flex;
 }
+
 
 button {
   border-radius: 8px;
@@ -33,14 +35,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
   /* position:absolute; */
-  /* bottom:0; */
+  bottom: 0;
   border-color: #000000;
   color: #331269;
-}
-
-.button {
-  position: absolute;
-  bottom: 0;
 }
 
 button:hover {
@@ -54,19 +51,20 @@ button:hover {
 }
 
 .btt-con {
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* gap: 5rem; */
-  /* align-items: center; */
-  /* padding: 2rem; */
-
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  /* padding: 2rem; */
-  margin-top: 2rem;
   width: 70%;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+  align-items: center;
+  /* padding: 2rem; */
+  /* margin-top: 2rem; */
+  /* width: 70%; */
   /* margin: 0 auto; */
+  /* padding-top: 5%; */
+}
+
+.btt-con button {
+  position: absolute;
 }
 
 .dropdown1 {
