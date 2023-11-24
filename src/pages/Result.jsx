@@ -7,9 +7,7 @@ import "../styles/button.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { createSwal } from "../services/createSwat";
 import Swal from "sweetalert2";
-import Loading from "../components/Loading";
 
 const Result = (props) => {
   const [sportResults, setSportResults] = useState([
@@ -145,8 +143,6 @@ const Result = (props) => {
         }
       })
       .then(() => {
-        // alert("Result is already saved!");
-        // window.location.reload();
         Swal.fire({
           icon: "success",
           title: "Result is already saved!",
@@ -166,29 +162,33 @@ const Result = (props) => {
 
   const sendDataToBackend = () => {
     if (hasMedalAndCountry(sportResults)) {
-      // alert("Please enter all sport results.");
-      createSwal("warning", "Please enter all sport results.", "#ffc038");
+      Swal.fire({
+        icon: "warning",
+        title: "Please enter all sport results.",
+        confirmButtonColor: "#ffc038",
+      });
     } else if (
       isSportTypeInList(detail.sport_type) &&
       !hasAllMedals(sportResults)
     ) {
-      // alert(
-      //   "This sport can't have duplicate medals.The Result should contain all three medals (Gold, Silver, and Bronze)."
-      // );
-      createSwal(
-        "warning",
-        "This sport can't have duplicate medals.\nThe Result should contain all three medals (Gold, Silver, and Bronze).",
-        "#ffc038"
-      );
+      Swal.fire({
+        icon: "warning",
+        title: "This sport can't have \n duplicate medals.",
+        text: "The Result should contain all three medal (Gold, Silver, and Bronze).",
+        confirmButtonColor: "#ffc038",
+      });
     } else {
       if (hasDuplicateCountries()) {
         Swal.fire({
           icon: "warning",
-          title:
-            "Duplicate countries found.\nAre you sure you want to enter duplicate countries?",
-          // color: "#ffc038",
+          title: "Duplicate countries found",
+          text: "Are you sure you want to enter duplicate countries?",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes",
         }).then((result) => {
-          if (result.isConfirmed ) {
+          if (result.isConfirmed) {
             const sport_id = { sport_id: detail.sport_id };
             const requestData = {
               result: {
