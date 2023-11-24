@@ -1,7 +1,7 @@
 import { auth, provider } from "../firebase/FirebaseConfig";
 import { useState } from "react";
 import { signInWithPopup } from "firebase/auth";
-import Olympic from "../img/Olympic.png";
+import Olympic from "../img/olympic.png";
 import backgroundVideo from "../img/paris2024.mp4";
 
 function SignIn() {

@@ -1,9 +1,7 @@
-// import React from 'react'
-// import Dropdown from '../components/dropdown.jsx'
 import React, { useState } from "react";
-import "../styles/header.css";
-import Card from "../components/card";
-import "../styles/button.css";
+import "../styles/Header.css";
+import Card from "../components/Card";
+import "../styles/Button.css";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";

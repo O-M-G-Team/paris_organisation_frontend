@@ -1,6 +1,4 @@
-// import '../styles/medal.css'
-// import {IoIosAddCircle} from "react-icons/io";
-import Card from "./card";
+import Card from "./Card";
 import { useState } from "react";
 import React from "react";
 

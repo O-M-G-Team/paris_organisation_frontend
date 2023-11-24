@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
-import SignIn from "../pages/signIn";
+import SignIn from "../pages/SignIn";
 import { auth, provider } from "../firebase/FirebaseConfig";
 
 const mockUserData = {

@@ -1,7 +1,7 @@
 import React from "react";
 import medalImg from "../assets/medal.png";
 import { Link } from "react-router-dom";
-import "../styles/medal.css";
+import "../styles/Medal.css";
 
 const Medal = ({ sportID }) => {
   const routeName = `/sport_detail/${sportID}`;

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/resultmedal.css";
+import "../styles/ResultMedal.css";
 import { LuMedal } from "react-icons/lu";
 import { IoIosArrowDropdown } from "react-icons/io";
 import React from "react";

@@ -1,4 +1,4 @@
-import "../styles/card.css";
+import "../styles/Card.css";
 import DropdownMedal from "./DropdownMedal";
 import Country from "./DropdownCountry";
 import React, { useState, useEffect } from "react";

@@ -4,7 +4,7 @@ import LogOutButton from "./LogoutButton";
 import defaultUserImg from "../assets/user.png";
 import logoImg from "/paris2024.png";
 import "../styles/NavBar.css";
-import { auth } from "../firebase/FirebaseConfig"; // Adjust the path as needed
+import { auth } from "../firebase/FirebaseConfig";
 
 const NavBar = () => {
   return (

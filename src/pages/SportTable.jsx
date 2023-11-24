@@ -3,7 +3,7 @@ import Medal from "../components/Medal";
 import "../styles/SportTable.css";
 import { getSport } from "../services/data";
 import NavBar from "../components/NavBar";
-import "../styles/result.css";
+import "../styles/Result.css";
 import Table from "../components/Table";
 import { debounce } from "lodash";
 import SportImage from "../components/SportImage";
