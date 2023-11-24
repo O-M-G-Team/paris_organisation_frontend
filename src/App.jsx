@@ -25,8 +25,6 @@ const MainApp = () => {
     return <SignIn />;
   } else {
     console.log("Main Router");
-    console.log(currentUser);
-    console.log(currentUser.uid);
     return <MainRouter />;
   }
 };
@@ -38,12 +36,12 @@ function App() {
     const fetchData = async () => {
       try {
         const res = await fetch(dataIocApi)
-
         if (!res.ok) {
           throw new Error(`Server responded with status: ${res.status}`)
         }
-        const result = await res.json()
-        console.log(result)
+        // console.log(res)
+        // const result = await res.json()
+        // console.log(result)
       } catch (err) {
         console.error("Error fetching data:", err)
       }
