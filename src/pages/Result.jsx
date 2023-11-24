@@ -168,15 +168,6 @@ const Result = (props) => {
     if (hasMedalAndCountry(sportResults)) {
       // alert("Please enter all sport results.");
       createSwal("warning", "Please enter all sport results.", "#ffc038");
-    } else if (hasDuplicateCountries()) {
-      // alert(
-      //   "Duplicate countries found. Please enter unique countries for each result."
-      // );
-      createSwal(
-        "warning",
-        "Duplicate countries found.\nPlease enter unique countries for each result.",
-        "#ffc038"
-      );
     } else if (
       isSportTypeInList(detail.sport_type) &&
       !hasAllMedals(sportResults)
@@ -190,28 +181,39 @@ const Result = (props) => {
         "#ffc038"
       );
     } else {
-      const sport_id = { sport_id: detail.sport_id };
-      const requestData = {
-        result: {
-          gold: sportResults
-            .filter((result) => result.medal === "Gold")
-            .map((result) => result.country),
-          silver: sportResults
-            .filter((result) => result.medal === "Silver")
-            .map((result) => result.country),
-          bronze: sportResults
-            .filter((result) => result.medal === "Bronze")
-            .map((result) => result.country),
-        },
-      };
-      const dataWithSportID = {
-        ...sport_id,
-        ...requestData,
-      };
-      console.log(dataWithSportID);
-      console.log(requestData);
-      sendData(database, methodDB, dataWithSportID, "backend");
-      sendData(url, method, requestData, "IOC");
+      if (hasDuplicateCountries()) {
+        Swal.fire({
+          icon: "warning",
+          title:
+            "Duplicate countries found.\nAre you sure you want to enter duplicate countries?",
+          // color: "#ffc038",
+        }).then((result) => {
+          if (result.isConfirmed ) {
+            const sport_id = { sport_id: detail.sport_id };
+            const requestData = {
+              result: {
+                gold: sportResults
+                  .filter((result) => result.medal === "Gold")
+                  .map((result) => result.country),
+                silver: sportResults
+                  .filter((result) => result.medal === "Silver")
+                  .map((result) => result.country),
+                bronze: sportResults
+                  .filter((result) => result.medal === "Bronze")
+                  .map((result) => result.country),
+              },
+            };
+            const dataWithSportID = {
+              ...sport_id,
+              ...requestData,
+            };
+            console.log(dataWithSportID);
+            console.log(requestData);
+            sendData(database, methodDB, dataWithSportID, "backend");
+            sendData(url, method, requestData, "IOC");
+          }
+        });
+      }
     }
   };
   return (
