@@ -1,0 +1,21 @@
+.combine-table {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.info_part {
+    width: 60%;
+    float: right;
+    margin-top: 2rem;
+
+}
+
+.result_part {
+    width: 40%;
+    float: left;
+}

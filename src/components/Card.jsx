@@ -1,14 +1,17 @@
-import "../styles/card.css";
+import "../styles/Card.css";
 import DropdownMedal from "./DropdownMedal";
 import Country from "./DropdownCountry";
 import React, { useState, useEffect } from "react";
 
 const Card = ({ updateSportResults, countries, onDelete }) => {
-  const [selectedMedal, setSelectedMedal] = useState('Select Medal');
-  const [selectedCountry, setSelectedCountry] = useState('Select Country');
+  const [selectedMedal, setSelectedMedal] = useState("Select Medal");
+  const [selectedCountry, setSelectedCountry] = useState("Select Country");
 
   useEffect(() => {
-    if (selectedMedal !== 'Select Medal' && selectedCountry !== 'Select Country') {
+    if (
+      selectedMedal !== "Select Medal" &&
+      selectedCountry !== "Select Country"
+    ) {
       updateSportResults({ medal: selectedMedal, country: selectedCountry });
     }
   }, [selectedMedal, selectedCountry]);
@@ -16,7 +19,11 @@ const Card = ({ updateSportResults, countries, onDelete }) => {
   return (
     <div className="card">
       <DropdownMedal selected={selectedMedal} setSelected={setSelectedMedal} />
-      <Country selected={selectedCountry} setSelected={setSelectedCountry} countries={countries} />
+      <Country
+        selected={selectedCountry}
+        setSelected={setSelectedCountry}
+        countries={countries}
+      />
     </div>
   );
 };

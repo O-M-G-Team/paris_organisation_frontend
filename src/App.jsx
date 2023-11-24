@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider, useAuth } from './firebase/AuthContext'; // Import your authentication context
-import SignIn from "./pages/signIn";
-import "./styles/signIn.css";
+import SignIn from "./pages/SignIn";
+import "./styles/SignIn.css";
 import SportTable from './pages/SportTable';
 import SportDetail from './pages/SportDetail';
 import SportDetailError from './pages/SportDetailError';

@@ -1,11 +1,7 @@
 .sport_info {
-  /* margin-top: 3rem; */
-  /* margin-right: 4rem; */
   border: 1px solid white;
   background-color: #003f5b;
-  /* color: #00004e; */
   margin-top: 5%;
-  /* margin-right: 2rem; */
   padding-top: 3%;
   padding-bottom: 5%;
   padding-left: 5%;
@@ -16,41 +12,24 @@
   width: fit-content;
   overflow-wrap: break-word;
   white-space: pre-wrap;
-  /* display: flex;
-  align-items: center; */
-  /* position: relative; */
-
   align-items: center;
 }
 
 .sport_info h1 {
-  /* color: #ffb2db; */
-  /* float: right; */
-  /* margin-right: 10%; */
-  /* position: relative; */
-  /* margin-left: 10%; */
   padding-top: 5%;
   padding-bottom: 5%;
   padding-left: 10%;
-  /* position: relative; */
 }
 
 .info-title:hover {
   color: #d6c278;
-  filter: brightness(0) saturate(100%) invert(80%) sepia(46%) saturate(349%)
-    hue-rotate(4deg) brightness(90%) contrast(89%);
+  filter: brightness(0) saturate(100%) invert(80%) sepia(46%) saturate(349%) hue-rotate(4deg) brightness(90%) contrast(89%);
 }
 
 .sport_info img {
-  /* position: relative; */
   display: block;
-  /* position: absolute; */
   float: left;
-  /* padding-left: 10%; */
-  /* width: 20%; */
-  /* margin-left: 5%; */
-  filter: brightness(0) saturate(100%) invert(78%) sepia(29%) saturate(645%)
-    hue-rotate(290deg) brightness(99%) contrast(108%);
+  filter: brightness(0) saturate(100%) invert(78%) sepia(29%) saturate(645%) hue-rotate(290deg) brightness(99%) contrast(108%);
 }
 
 .sport_info h2 {
@@ -61,6 +40,7 @@
 .sport_info h2:hover {
   color: #d6c278;
 }
+
 .sport_info p {
   font-size: 18px;
   color: white;
@@ -70,12 +50,10 @@
 .detail {
   margin-top: 10px;
 }
+
 .detail table {
-  /* border-collapse: collapse;
-    table-layout: fixed; */
   background: white;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  /* margin-top: 5%; */
 }
 
 .detail th,
@@ -113,6 +91,7 @@ td {
 .detail tr td:nth-child(odd) {
   background-color: #d6c27893;
   color: black;
+
   &:first-child {
     background-color: #d6c27852;
   }

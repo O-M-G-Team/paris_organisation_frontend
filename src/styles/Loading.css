@@ -33,6 +33,7 @@
   from {
     transform: scale(0);
   }
+
   to {
     transform: scale(2);
   }
@@ -42,6 +43,7 @@
   from {
     transform: rotate(0);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -51,6 +53,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
