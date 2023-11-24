@@ -43,7 +43,7 @@
 .user-name {
   position: relative;
   /* right: 3rem; */
-  right: 40%;
+  right: 25%;
 }
 
 .user-name:hover {
@@ -78,6 +78,7 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
+  margin-left: 2rem;
 }
 
 .container .menu-wrap .user img {
