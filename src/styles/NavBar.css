@@ -42,7 +42,6 @@
 
 .user-name {
   position: relative;
-  /* right: 3rem; */
   right: 25%;
 }
 
@@ -59,6 +58,7 @@
   height: 25px;
   width: 15px;
   padding-top: 1%;
+  margin-left: 2rem;
 }
 
 .menu-wrap {
@@ -78,7 +78,6 @@
   align-items: center;
   justify-content: center;
   z-index: 1;
-  margin-left: 2rem;
 }
 
 .container .menu-wrap .user img {
@@ -120,7 +119,7 @@
   list-style: none;
 }
 
-.container .menu-wrap .toggler:checked ~ .menu {
+.container .menu-wrap .toggler:checked~.menu {
   opacity: 1;
   visibility: visible;
   width: 120px;
@@ -129,23 +128,23 @@
   z-index: 3;
 }
 
-.container .menu-wrap .toggler:checked ~ .user {
+.container .menu-wrap .toggler:checked~.user {
   transition: 0.5s;
 }
 
-.container .menu-wrap .toggler:not(:checked) ~ .menu {
+.container .menu-wrap .toggler:not(:checked)~.menu {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
 }
 
-.toggler:focus ~ .menu {
+.toggler:focus~.menu {
   opacity: 0;
   visibility: hidden;
   transition: 0.3s;
 }
 
-.container .menu-wrap .toggler:not(:checked) ~ .user {
+.container .menu-wrap .toggler:not(:checked)~.user {
   transition: 0.5s;
 }
 
