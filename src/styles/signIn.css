@@ -52,7 +52,7 @@ body {
 
 .parah:hover {
   color: #d6c278;
-  transform: scale(1.1); 
+  transform: scale(1.1);
   transition: transform 0.3s, color 0.3s;
 }
 
@@ -76,18 +76,16 @@ body {
 
 .button-85:before {
   content: "";
-  background: linear-gradient(
-    45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
-    #ff0000
-  );
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
   position: absolute;
   top: -2px;
   left: -2px;
@@ -107,9 +105,11 @@ body {
   0% {
     background-position: 0 0;
   }
+
   50% {
     background-position: 400% 0;
   }
+
   100% {
     background-position: 0 0;
   }
@@ -126,4 +126,3 @@ body {
   top: 0;
   border-radius: 10px;
 }
-

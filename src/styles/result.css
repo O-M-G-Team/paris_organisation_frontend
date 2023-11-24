@@ -1,17 +1,4 @@
-.combine-table{
-    /* display: grid; */
-    /* display: grid;
-    grid-template-columns: repeat(2, ); */
-
-    /* height: auto; */
-    /* width: 1257px; */
-    /* justify-content: center; */
-    /* align-items: center; */
-    /* height: 100vh; */
-    /* margin-top: 3rem;
-    margin-right: 1rem;
-    margin-left: 1rem; */
-
+.combine-table {
     display: flex;
     flex-direction: row;
     gap: 2rem;
@@ -19,16 +6,13 @@
     justify-content: center;
     margin-right: 1rem;
     margin-left: 1rem;
-    
-
 }
 
 .info_part {
     width: 60%;
-    /* margin-left: 30px; */
     float: right;
     margin-top: 2rem;
-    
+
 }
 
 .result_part {

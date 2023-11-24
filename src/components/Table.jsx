@@ -2,7 +2,6 @@ import React from "react";
 import { useSortBy, useTable, useGlobalFilter } from "react-table";
 import { GlobalFilter } from "./GlobalFilter";
 
-
 export default function Table({ columns, data }) {
   const {
     getTableProps,
@@ -17,13 +16,11 @@ export default function Table({ columns, data }) {
       columns,
       data,
       initialState: {
-        sortBy: [
-          { id: 'Sport', desc: false },
-        ],
+        sortBy: [{ id: "Sport", desc: false }],
       },
     },
     useGlobalFilter,
-    useSortBy,
+    useSortBy
   );
 
   const { globalFilter } = state;
@@ -35,13 +32,13 @@ export default function Table({ columns, data }) {
       </div>
       <table {...getTableProps()}>
         <thead>
-          {headerGroups.map(headerGroup => (
+          {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map(column => (
+              {headerGroup.headers.map((column) => (
                 <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                   {column.render("Header")}
                   <span>
-                    {column.isSorted ? (column.isSortedDesc ? '▲' : '▼') : ''}
+                    {column.isSorted ? (column.isSortedDesc ? "▲" : "▼") : ""}
                   </span>
                 </th>
               ))}
@@ -53,8 +50,10 @@ export default function Table({ columns, data }) {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map(cell => {
-                  return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                {row.cells.map((cell) => {
+                  return (
+                    <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                  );
                 })}
               </tr>
             );
