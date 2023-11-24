@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent, waitFor } from "@testing-library/react";
-import LogOutButton from "../components/LogOutButton";
 import { auth } from "../firebase/FirebaseConfig";
+import LogOutButton from "../components/LogOutButton";
 
 jest.mock("../firebase/FirebaseConfig", () => ({
   auth: {

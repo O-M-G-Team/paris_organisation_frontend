@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import LogOutButton from "./LogoutButton";
+import LogOutButton from "./LogOutButton";
 import defaultUserImg from "../assets/user.png";
 import logoImg from "/paris2024.png";
 import "../styles/NavBar.css";
