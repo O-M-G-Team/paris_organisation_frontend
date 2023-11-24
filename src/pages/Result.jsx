@@ -96,33 +96,6 @@ const Result = (props) => {
     return sport_type && unduplicatesport.includes(sport_type.toLowerCase());
   }
 
-  function hasAllMedals(array) {
-    let hasGold = false;
-    let hasSilver = false;
-    let hasBronze = false;
-
-    for (let i = 0; i < array.length; i++) {
-      if (array[i].medal === "Gold") {
-        hasGold = true;
-      } else if (array[i].medal === "Silver") {
-        hasSilver = true;
-      } else if (array[i].medal === "Bronze") {
-        hasBronze = true;
-      }
-    }
-
-    return hasGold && hasSilver && hasBronze;
-  }
-  function hasMedalAndCountry(array) {
-    for (let i = 0; i < sportResults.length; i++) {
-      if (
-        array[i].medal === "Select Medal" &&
-        array[i].country === "Select Country"
-      ) {
-        return true;
-      }
-    }
-  }
   // console.log(sportResults)
 
   const sendData = (url, method, requestData, destination) => {
