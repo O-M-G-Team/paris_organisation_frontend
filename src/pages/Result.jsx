@@ -177,45 +177,67 @@ const Result = (props) => {
         text: "The Result should contain all three medal (Gold, Silver, and Bronze).",
         confirmButtonColor: "#ffc038",
       });
+    } else if (hasDuplicateCountries()) {
+      Swal.fire({
+        icon: "warning",
+        title: "Duplicate countries found",
+        text: "Are you sure you want to enter duplicate countries?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const sport_id = { sport_id: detail.sport_id };
+          const requestData = {
+            result: {
+              gold: sportResults
+                .filter((result) => result.medal === "Gold")
+                .map((result) => result.country),
+              silver: sportResults
+                .filter((result) => result.medal === "Silver")
+                .map((result) => result.country),
+              bronze: sportResults
+                .filter((result) => result.medal === "Bronze")
+                .map((result) => result.country),
+            },
+          };
+          const dataWithSportID = {
+            ...sport_id,
+            ...requestData,
+          };
+          console.log(dataWithSportID);
+          console.log(requestData);
+          sendData(database, methodDB, dataWithSportID, "backend");
+          sendData(url, method, requestData, "IOC");
+        }
+      });
     } else {
-      if (hasDuplicateCountries()) {
-        Swal.fire({
-          icon: "warning",
-          title: "Duplicate countries found",
-          text: "Are you sure you want to enter duplicate countries?",
-          showCancelButton: true,
-          confirmButtonColor: "#3085d6",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes",
-        }).then((result) => {
-          if (result.isConfirmed) {
-            const sport_id = { sport_id: detail.sport_id };
-            const requestData = {
-              result: {
-                gold: sportResults
-                  .filter((result) => result.medal === "Gold")
-                  .map((result) => result.country),
-                silver: sportResults
-                  .filter((result) => result.medal === "Silver")
-                  .map((result) => result.country),
-                bronze: sportResults
-                  .filter((result) => result.medal === "Bronze")
-                  .map((result) => result.country),
-              },
-            };
-            const dataWithSportID = {
-              ...sport_id,
-              ...requestData,
-            };
-            console.log(dataWithSportID);
-            console.log(requestData);
-            sendData(database, methodDB, dataWithSportID, "backend");
-            sendData(url, method, requestData, "IOC");
-          }
-        });
-      }
+      const sport_id = { sport_id: detail.sport_id };
+      const requestData = {
+        result: {
+          gold: sportResults
+            .filter((result) => result.medal === "Gold")
+            .map((result) => result.country),
+          silver: sportResults
+            .filter((result) => result.medal === "Silver")
+            .map((result) => result.country),
+          bronze: sportResults
+            .filter((result) => result.medal === "Bronze")
+            .map((result) => result.country),
+        },
+      };
+      const dataWithSportID = {
+        ...sport_id,
+        ...requestData,
+      };
+      console.log(dataWithSportID);
+      console.log(requestData);
+      sendData(database, methodDB, dataWithSportID, "backend");
+      sendData(url, method, requestData, "IOC");
     }
   };
+
   return (
     <>
       <div className="result">
