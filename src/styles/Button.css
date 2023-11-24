@@ -56,19 +56,8 @@ button:hover {
   flex-direction: row;
   gap: 4rem;
   align-items: center;
-  /* padding: 2rem; */
-  /* margin-top: 2rem; */
-  /* width: 70%; */
-  /* margin: 0 auto; */
-  /* padding-top: 5%; */
 }
 
 .btt-con button {
   position: absolute;
-}
-
-.dropdown1 {
-  /* width: 789px;
-  height: 70px; */
-  /* align-items: center; */
 }

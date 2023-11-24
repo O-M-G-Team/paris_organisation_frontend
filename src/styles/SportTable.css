@@ -5,17 +5,8 @@
 
 body {
   background-color: #000000;
-  /* background-image: url(../assets//bg.png); */
-  /* Full height */
-  /* height: 50%; */
-
-  /* Center and scale the image nicely */
-  /* background-position: center; */
-  /* background-repeat: repeat; */
-  /* background-size: cover; */
-  /* background-repeat: repeat-y; */
-  /* background-position: 10px 30px; */
 }
+
 @property --k {
   syntax: "<number>";
   initial-value: 0;
@@ -39,11 +30,9 @@ svg[height="0"] {
 
   --k: 0;
   place-self: center;
-  background: linear-gradient(
-    90deg,
-    hsl(calc(var(--k) * 1turn), 75%, 65%),
-    hsl(calc(var(--k) * 1turn + 90deg), 65%, 65%)
-  );
+  background: linear-gradient(90deg,
+      hsl(calc(var(--k) * 1turn), 75%, 65%),
+      hsl(calc(var(--k) * 1turn + 90deg), 65%, 65%));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -53,6 +42,7 @@ svg[height="0"] {
 
   animation: k 4s linear infinite;
 }
+
 @keyframes k {
   to {
     --k: 1;
@@ -106,6 +96,7 @@ td {
   /* white-space: nowrap; */
   text-overflow: ellipsis;
   text-align: center;
+
   &:first-child {
     width: 25%;
     overflow-wrap: break-word;
@@ -170,6 +161,7 @@ tr td:nth-child(even) {
 
 tr td:nth-child(odd) {
   background-color: #24487a;
+
   &:first-child {
     background-color: #00004e;
   }
@@ -220,6 +212,5 @@ tr td:nth-child(odd) {
 }
 
 .sport-name img {
-  filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(7161%)
-    hue-rotate(155deg) brightness(86%) contrast(95%);
+  filter: brightness(0) saturate(100%) invert(100%) sepia(76%) saturate(7161%) hue-rotate(155deg) brightness(86%) contrast(95%);
 }

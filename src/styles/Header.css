@@ -1,14 +1,14 @@
-.header{
+.header {
     /* width: 789px; */
-/* height: 117px;
+    /* height: 117px;
 flex-shrink: 0;
 border: 1px solid #000;
 background: #D6C278;
 position: relative; */
-
 }
-.w{
-/* color: #000;
+
+.w {
+    /* color: #000;
 text-align: center;
 font-size: 40px;
 font-style: normal;
@@ -17,5 +17,4 @@ line-height: normal;
 position: absolute;
 top: 25%;
 left: 36%; */
-
 }
