@@ -6,7 +6,6 @@ import backgroundVideo from "../img/paris2024.mp4";
 
 function SignIn() {
   const [user, setUser] = useState(null);
-  // console.log('auth1', auth.currentUser)
   const handleGoogleSignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
