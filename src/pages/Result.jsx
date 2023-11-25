@@ -122,7 +122,7 @@ const Result = (props) => {
     else if (goldCount  ===1 && silverCount >1 && bronzeCount >= 1){
       return '4'
   }
-  else if (goldCount  ===0 && silverCount >=1 && bronzeCount >= 1){
+  else if (goldCount  ===0 && (silverCount >=1 || bronzeCount >= 1)){
     return '5'
   }
 }
