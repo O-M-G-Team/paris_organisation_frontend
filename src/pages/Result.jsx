@@ -96,7 +96,36 @@ const Result = (props) => {
     return sport_type && unduplicatesport.includes(sport_type.toLowerCase());
   }
 
-  // console.log(sportResults)
+  function MedalCondition(medalArray) {
+    const goldCount = medalArray.filter((entry) => entry.medal === 'Gold').length;
+    const silverCount = medalArray.filter((entry) => entry.medal === 'Silver').length;
+    const bronzeCount = medalArray.filter((entry) => entry.medal === 'Bronze').length;
+  
+    if (goldCount === 2 && silverCount >= 1) {
+      // Swal.fire({
+      //   icon: "warning",
+      //   title: "Cann't enter silver medal because your enter more than 1 gold.",
+      //   confirmButtonColor: "#ffc038",
+      // });
+      return '1'
+    } else if (goldCount >= 3 && (silverCount > 0 || bronzeCount > 0)) {
+      // Swal.fire({
+      //   icon: "warning",
+      //   title: "Cann't enter other medal because your enter more than 2 gold.",
+      //   confirmButtonColor: "#ffc038",
+      // });
+      return '2'
+    } 
+    else if (goldCount  ===1 && silverCount ===0 && bronzeCount >= 1){
+      return '3'
+    }
+    else if (goldCount  ===1 && silverCount >1 && bronzeCount >= 1){
+      return '4'
+  }
+  else if (goldCount  ===0 && silverCount >=1 && bronzeCount >= 1){
+    return '5'
+  }
+}
 
   const sendData = (url, method, requestData, destination) => {
     fetch(url, {
@@ -132,7 +161,44 @@ const Result = (props) => {
   };
 
   const sendDataToBackend = () => {
-    if (hasMedalAndCountry(sportResults)) {
+    if (MedalCondition(sportResults) === '1' && !isSportTypeInList(detail.sport_type) ) {
+            Swal.fire({
+        icon: "warning",
+        title: "Cannot enter silver medal because you enter more than 1 gold medal.",
+        confirmButtonColor: "#ffc038",
+      });
+    }
+    else if (MedalCondition(sportResults) === '2'&& !isSportTypeInList(detail.sport_type))  {
+        Swal.fire({
+        icon: "warning",
+        title: "Cannot enter other medal because you enter more than 2 gold medals.",
+        confirmButtonColor: "#ffc038",
+      });
+    }
+    else if (MedalCondition(sportResults) === '3' && !isSportTypeInList(detail.sport_type) ) {
+      Swal.fire({
+      icon: "warning",
+      title: "Cannot enter because no silver medal provided.",
+      confirmButtonColor: "#ffc038",
+    });
+  }
+  else if (MedalCondition(sportResults) === '4' && !isSportTypeInList(detail.sport_type) ) {
+    Swal.fire({
+    icon: "warning",
+    title: "Cannot enter bronze medal because you enter more than 2 silver medals.",
+    confirmButtonColor: "#ffc038",
+  });
+}
+else if (MedalCondition(sportResults) === '5' && !isSportTypeInList(detail.sport_type) ) {
+  Swal.fire({
+  icon: "warning",
+  title: "Please enter gold medal result.",
+  confirmButtonColor: "#ffc038",
+});
+}
+
+    
+    else if (hasMedalAndCountry(sportResults)) {
       Swal.fire({
         icon: "warning",
         title: "Please enter all sport results.",
